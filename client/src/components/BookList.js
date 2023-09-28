@@ -2,11 +2,12 @@ import React from "react";
 import BookDetails from "./BookDetails";
 
 function BookList({bookData}){
-    console.log(bookData)
-
+    
+    const displayedBooks = bookData.map(book =>  <div key={book.id}>  <BookDetails book={book}/>  </div> )
+    
     return(
         <div>
-        {bookData.map(book =>  <div key={book.id}>  <BookDetails book={book}/>  </div> )}
+        {displayedBooks}
         </div>
     )
 }

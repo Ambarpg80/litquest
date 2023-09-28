@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
     def index 
-        render json: Book.all, except: [:created_at, :updated_at], status: :ok
+        render json: Book.all, status: :ok
     end
 
 

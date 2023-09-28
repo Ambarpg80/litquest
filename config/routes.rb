@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  namespace :api do
+  # namespace :api do
   # Defines the root path route ("/")
-   root "books#index"
-  # resources :books, only: [:index]
+  #  root "books#index"
+  resources :books, only: [:index]
   # resources :users
-  end
+  # end
 
-  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+  # get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
 
 end

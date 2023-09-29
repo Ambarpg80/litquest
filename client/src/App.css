@@ -8,6 +8,7 @@
 }
 
 
+
 .App-header {
   background-color: #35b91e;
   min-height: 10vh;
@@ -19,15 +20,40 @@
   color: rgb(6, 81, 22);
 }
 
-.App-link {
-  color: #61dafb;
+.active {
+   color: white
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.single-book{
+   border: 1px solid rgb(65, 78, 67);
+   margin: 20px;
+   padding: 10px;
 }
+
+.book-details{
+  margin: 10px;
+  display: inline-flex;
+  text-align: left;
+}
+
+.thumbnail{
+  display: block;
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+}
+
+img {
+  height: 150px;
+ width: 150px;
+  float: left;
+  margin-bottom: 5px;
+
+}
+.caption{
+  float: left;
+  display: flex;
+  font-size: 12px; 
+  
+}
+

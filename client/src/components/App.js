@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import BookList from './BookList';
 import NavBar from './NavBar';
+import Home from './Home'
 
 function App() {
   const [bookData, setBookData] = useState([]);
@@ -19,11 +20,12 @@ function App() {
     <div className="App">
        {/* <UserProvider> */}
       <nav className="App-header"> <NavBar/> </nav> 
-        <Routes> 
-          <Route path="/" element={ <BookList bookData={bookData}/> } />
+        <Routes>
+        <Route path="/" element={ <Home/> } /> 
+          <Route path="/books" element={ <BookList bookData={bookData}/> } />
           
         </Routes>
-        <BookList bookData={bookData} />
+        {/* <BookList bookData={bookData} /> */}
       {/* </UserProvider>  */}
     </div>
   );

@@ -6,7 +6,8 @@ class BooksController < ApplicationController
 
 
     private 
-    # def book_params
-    #     params.permit(:title, :author, :publisher, :genre)
-    # end
+    def book_params
+        params.permit(:title, :author, :publisher, :genre, :thumbnail_url)
+    end
 end
+# title author publisher genre thumbnail_url

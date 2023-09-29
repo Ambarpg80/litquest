@@ -6,6 +6,7 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.string :publisher
       t.string :genre
       t.string :thumbnail_url
+      t.string :preview
 
       t.timestamps
     end

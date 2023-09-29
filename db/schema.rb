@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_26_193434) do
     t.string "publisher"
     t.string "genre"
     t.string "thumbnail_url"
+    t.string "preview"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

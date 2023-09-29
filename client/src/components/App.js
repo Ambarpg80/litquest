@@ -1,8 +1,5 @@
 import '../App.css';
 import React, { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import BookList from './BookList';
-import NavBar from './NavBar';
 import Home from './Home'
 
 function App() {
@@ -19,13 +16,8 @@ function App() {
   return (
     <div className="App">
        {/* <UserProvider> */}
-      <nav className="App-header"> <NavBar/> </nav> 
-        <Routes>
-        <Route path="/" element={ <Home/> } /> 
-          <Route path="/books" element={ <BookList bookData={bookData}/> } />
-          
-        </Routes>
-        {/* <BookList bookData={bookData} /> */}
+      <Home bookData={bookData} /> 
+       
       {/* </UserProvider>  */}
     </div>
   );

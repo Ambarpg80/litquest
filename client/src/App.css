@@ -57,3 +57,33 @@ img {
   
 }
 
+.form-container{
+  text-align: start;
+  font-size : 16px;
+  color:#123024;  
+  background-color:#70d4862e;
+  border:  5px, solid, rgb(50, 72, 3) ;
+  border-radius: 10px;
+  margin: auto;
+  padding-left: 5vh;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  width : 700px;
+}
+div.form-container input{
+  border:  solid 2px rgba(0, 63, 13, 0.353);
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
+  height: 20px;
+  width: 550px;
+  max-width: 600px;
+}
+textarea{
+  border-radius: 5px;
+  border:  solid 2px rgba(0, 63, 13, 0.353);
+  font-size: 16px;
+  margin: 10px;
+  height: 25px;
+  width: 450px;
+}

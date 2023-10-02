@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # namespace :api do
   # Defines the root path route ("/")
   #  root "books#index"
-  resources :books, only: [:index]
+  resources :books, only: [:index, :show, :create, :update, :destroy]
   # resources :users
   # end
 

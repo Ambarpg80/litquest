@@ -3,7 +3,7 @@ import {  Routes, Route, Outlet } from "react-router-dom";
 import BookList from './Books/BookList';
 import NavBar from './NavBar';
 
-function Home({bookData}){
+function Home({bookData, onDelete, onAddBook, onBookUpdate}){
     
     
     
@@ -12,7 +12,13 @@ function Home({bookData}){
         <nav className="App-header"> <NavBar/> </nav> 
         <Routes>
         <Route path="/" element={ <Home/> } /> 
-          <Route path="/books" element={ <BookList bookData={bookData}/> } />
+          <Route path="/books" element={ 
+            <BookList bookData={bookData}
+                      onDelete={onDelete}
+                      onAddBook={onAddBook}
+                      onBookUpdate = {onBookUpdate}
+            /> } 
+          />
           
         </Routes>
         <Outlet/>

@@ -1,14 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
+import EditBookForm from "./EditBookForm";
 
-function BookDetails({book}){
+function BookDetails({book, onDelete, onBookUpdate}){
+   const [editForm, setEditForm] = useState(false)
  const buttonStyling = {float: "left", marginRight: "5px", marginBottom: "10px"}
+
+   function showEditForm(){
+      setEditForm(!editForm)
+   }
+
+function deleteBook(){
+   fetch(`/books/${book.id}`,{
+      method: "DELETE" })
+      .then(onDelete(book))
+     
+  
+}   
 
     return(
       <div className="single-book">
          <div>
-            <button style={buttonStyling}> Delete Book </button>
-            <button style={buttonStyling}> Add Book </button> 
-            <button style={buttonStyling}> Edit Book </button> 
+            <button onClick={deleteBook}
+                    style={buttonStyling} 
+                    type="button"> Delete Book 
+            </button>
+            <button onClick={showEditForm} 
+                    style={buttonStyling} 
+                    type="button"> Edit Book 
+            </button> 
+            {editForm ? <EditBookForm book={book} onBookUpdate={onBookUpdate} showEditForm={showEditForm} /> : null}
          </div>
          <div className="book-details">
             <div className="thumbnail" style={{border: "1px solid rgb(65, 78, 67)"}}>

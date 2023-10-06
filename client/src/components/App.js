@@ -1,5 +1,8 @@
 import '../App.css';
 import React, { useEffect, useState } from 'react';
+import {  Routes, Route } from "react-router-dom";
+import BookList from './Books/BookList';
+import NavBar from './NavBar';
 import Home from './Home'
 
 function App() {
@@ -27,12 +30,20 @@ function App() {
 
   return (
     <div className="App">
-       {/* <UserProvider> */}
-      <Home bookData={bookData} 
-            onDelete={handleBookRemoval} 
-            onAddBook={handleBookAdded}
-            onBookUpdate={handleBookUpdate}
-      /> 
+       {/* <UserProvider> */}<nav className="App-header"> <NavBar/> </nav> 
+        <Routes>
+        
+        <Route path="/books" element={ 
+          <BookList bookData={bookData} 
+                    onDelete={handleBookRemoval} 
+                    onAddBook={handleBookAdded}
+                    onBookUpdate={handleBookUpdate}
+          /> } 
+        />
+        <Route exact path="/" element={ <Home/> } /> 
+        <Route path="*" element={ <Home/> } /> 
+        
+      </Routes>
        
       {/* </UserProvider>  */}
     </div>

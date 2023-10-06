@@ -1,28 +1,14 @@
 import React from "react";
-import {  Routes, Route, Outlet } from "react-router-dom";
-import BookList from './Books/BookList';
-import NavBar from './NavBar';
 
-function Home({bookData, onDelete, onAddBook, onBookUpdate}){
+
+function Home(){
+     
     
-    
-    
-    return(
-        <div>
-        <nav className="App-header"> <NavBar/> </nav> 
-        <Routes>
-        <Route path="/" element={ <Home/> } /> 
-          <Route path="/books" element={ 
-            <BookList bookData={bookData}
-                      onDelete={onDelete}
-                      onAddBook={onAddBook}
-                      onBookUpdate = {onBookUpdate}
-            /> } 
-          />
-          
-        </Routes>
-        <Outlet/>
-        </div>
+  return(
+    <div>
+        
+        
+    </div>
     )
 }
 

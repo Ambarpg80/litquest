@@ -37,7 +37,7 @@ Book.create(title: "Diary of an 8-Bit Warrior",
             thumbnail_url: "https://m.media-amazon.com/images/I/81LCpUQkgeL._SY466_.jpg",
             preview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 
-jem = UserProfile.create(name: "Jemma Alonzo", 
+jem = UserProfile.create!(name: "Jemma Alonzo", 
                     age: 40,
                     username: "mamabear", 
                     email: "mamabear@example.com" ,
@@ -47,17 +47,18 @@ jem = UserProfile.create(name: "Jemma Alonzo",
                         email: "mamabear@example.com" , 
                         image_url: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" ) )
 
-lui = UserProfile.create(
+lui = UserProfile.create!(
                    name: "Luisa Alonzo", 
                    age: 10,
                    username: "cubby", 
                    password: "12345", 
                    password_confirmation: "12345" , 
                    profileable: Child.create(
+                    parent_id: jem.profileable.id,
                     image_url: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
                     rewards: "none"))
 
-Review.create(user_id: lui.id, 
+Review.create!(child_id: lui.profileable.id, 
               book_id: 1,
               summary: "I liked the book alot.", 
               rating: 4)

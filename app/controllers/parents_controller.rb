@@ -5,10 +5,11 @@ class ParentsController < ApplicationController
         adults = Parent.all
         render json: adults, status: :ok
     end
+     
 
     def show
-        Parent = Parent.find(params[:id])
-        render json: Parent,  status: :ok
+        parent = Parent.find(params[:id])
+        render json: parent, status: :ok
     end
 
     def create 
@@ -18,14 +19,14 @@ class ParentsController < ApplicationController
     end
 
     def update 
-        Parent = Parent.find(params[:id])
+        parent = Parent.find(params[:id])
         Parent.update(adult_params)
         render json: Parent, status: :accepted
     end
 
     def destroy
-        Parent = Parent.find_by(id: params[:id])
-        Parent.destroy
+        parent = Parent.find_by(id: params[:id])
+        parent.destroy
         head :no_content
     end
 

@@ -11,7 +11,6 @@ class ChildrenController < ApplicationController
 
     def create 
         new_child = Child.create(child_params)
-        # new_child.create_profile(profile_params)
         render json: new_child, status: :created
     end
 
@@ -34,5 +33,5 @@ class ChildrenController < ApplicationController
         params.permit(:adult_id, :image_url, :rewards)
     end
 
-    end
+
 end

@@ -1,7 +1,10 @@
 import '../App.css';
 import React, { useEffect, useState } from 'react';
 import {  Routes, Route } from "react-router-dom";
-import BookList from './Books/BookList';
+import { UserProvider } from './context/UserProvider';
+import LoginForm from './sessions/LoginForm';
+import SignUpForm from './sessions/SignUpForm';
+import BookList from './books/BookList';
 import NavBar from './NavBar';
 import Home from './Home'
 
@@ -30,22 +33,26 @@ function App() {
 
   return (
     <div className="App">
-       {/* <UserProvider> */}<nav className="App-header"> <NavBar/> </nav> 
-        <Routes>
+       <UserProvider>
+        <nav className="App-header"> <NavBar/> </nav>
         
-        <Route path="/books" element={ 
-          <BookList bookData={bookData} 
-                    onDelete={handleBookRemoval} 
-                    onAddBook={handleBookAdded}
-                    onBookUpdate={handleBookUpdate}
-          /> } 
-        />
-        <Route exact path="/" element={ <Home/> } /> 
-        <Route path="*" element={ <Home/> } /> 
-        
-      </Routes>
+          <Routes>
+            <Route exact path="/" element={ <Home/> } /> 
+            <Route path="/books" element={ 
+              <BookList bookData={bookData} 
+                        onDelete={handleBookRemoval} 
+                        onAddBook={handleBookAdded}
+                        onBookUpdate={handleBookUpdate} /> } 
+              />
+            
+            <Route path="/login" element= {<LoginForm/>} />
+            <Route path="/logout" />
+            <Route path= "/signup" element= {<SignUpForm/>} />
+            <Route path="*" element={ <Home/> } /> 
+          
+          </Routes>
        
-      {/* </UserProvider>  */}
+      </UserProvider> 
     </div>
   );
 }

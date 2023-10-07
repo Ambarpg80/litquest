@@ -21,6 +21,17 @@
 .active {
    color: white
 }
+.auth-container{    /*job card container */
+  background-color: #bddbb8;
+  font-size : 20px;
+  color:#0c2d11; 
+  padding-left: 480%;
+  
+  padding-top: 30px;
+  padding-bottom: 50px;
+  width : 100%;
+ 
+}
 
 .single-book{
    border: 1px solid rgb(65, 78, 67);

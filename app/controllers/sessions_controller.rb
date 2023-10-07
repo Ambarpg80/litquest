@@ -1,2 +1,20 @@
 class SessionsController < ApplicationController
+
+
+    def create #login Route
+        user = UserProfile.find_by(username: params[:username]) 
+         if user&.authenticate(params[:password])
+          session[:user_id] = user.id
+          render json: user, status: :created
+         else
+          render json: {error:  "Invalid Username or Password"}, status: :unauthorized
+        end 
+    end
+  
+
+
+    def destroy #logout
+        session.delete :user_id
+        head :no_content
+    end
 end

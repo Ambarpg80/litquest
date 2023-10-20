@@ -1,4 +1,6 @@
 class ChildrenController < ApplicationController
+    skip_before_action :authorize , only: :create
+
     def index 
         kids = Child.all
         render json: kids, status: :ok
@@ -10,8 +12,14 @@ class ChildrenController < ApplicationController
     end
 
     def create 
-        new_child = Child.create(child_params)
+        user = current_user
+        if user.profileable_type == "Parent"
+          new_child = user.children.create!(child_params)
+        else
+          new_child = Child.create!(child_params)
+        session[:id] = new_child.id
         render json: new_child, status: :created
+        end
     end
 
     def update 
@@ -30,7 +38,7 @@ class ChildrenController < ApplicationController
     private
 
     def child_params
-        params.permit(:adult_id, :image_url, :rewards)
+        params.permit(:parent_id, :name, :image_url, :rewards)
     end
 
 

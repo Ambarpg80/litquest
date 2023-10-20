@@ -1,30 +1,38 @@
 class ReviewsController < ApplicationController
+    skip_before_action :authorize , only: [:index, :create]
+    
     def index 
         reviews = Review.all
-        render json: reviews,include: [:reviewren], status: :ok
+        render json: reviews, status: :ok
     end
 
     def show
         review = Review.find(params[:id])
-        render json: review, include: [:reviewren], status: :ok
+        render json: review, status: :ok
     end
 
     def create 
-        new_review = Review.create(review_params)
+        user = current_user.profileable
+        new_review = user.reviews.create!(review_params)
+        if new_review.valid?
         render json: new_review, status: :created
+        end
     end
 
     def update 
-        review = Review.find(params[:id])
-        review.update(review_params)
+        user = current_user.profileable
+        review = user.reviews.find_by(id: params[:id])
+        review.update!(review_params)
         render json: review, status: :accepted
     end
 
     def destroy
-        review = Review.find_by(id: params[:id])
+        user = current_user.profileable
+        review = user.reviews.find_by(id: params[:id])
         review.destroy
         head :no_content
     end
+  
 
 
     private

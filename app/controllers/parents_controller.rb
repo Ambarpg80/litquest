@@ -1,27 +1,26 @@
 class ParentsController < ApplicationController
-    
+    skip_before_action :authorize , only: :create
     
     def index 
-        adults = Parent.all
-        render json: adults, status: :ok
+        parents = Parent.all
+        render json: parents, status: :ok
     end
      
 
     def show
-        parent = Parent.find(params[:id])
-        render json: parent, status: :ok
+        parent = Parent.find_by(id: params[:id])
+        render json: parent, include: :children, status: :ok
     end
 
     def create 
         new_parent = Parent.create(parent_params) 
-        # new_adult.create_profile(profile_params)
-        render json: new_adult, status: :created
+        render json: new_parent, status: :created
     end
 
     def update 
         parent = Parent.find(params[:id])
-        Parent.update(adult_params)
-        render json: Parent, status: :accepted
+        parent.update(adult_params)
+        render json: parent, status: :accepted
     end
 
     def destroy
@@ -30,10 +29,14 @@ class ParentsController < ApplicationController
         head :no_content
     end
 
+    def my_children
+        user = current_user.profileable
+        render json: user.children, status: :ok
+    end
 
     private
 
     def parent_params
-        params.permit(:email, :image_url)
+        params.permit(:name, :image_url)
     end
 end

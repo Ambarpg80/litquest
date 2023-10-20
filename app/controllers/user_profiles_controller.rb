@@ -1,5 +1,5 @@
 class UserProfilesController < ApplicationController
-    
+    skip_before_action :authorize , only: [:index, :create]
 
     def index 
         profiles = UserProfile.all
@@ -7,23 +7,29 @@ class UserProfilesController < ApplicationController
     end
 
     def show
-        profile = UserProfile.find(params[:id])
-        render json: profile, status: :ok
+        user_profile = current_user.profileable
+        render json: user_profile, status: :ok
     end
 
     def create
-            profile = UserProfile.create(user_profile_params)
-            render json: new_profile, status: :created
-    #     else
-    #         render json: {error: "UserProfile can't be created"}, status: :unprocessable_entity
-        
-    #   end
+        new_profile = UserProfile.new(user_params)
+        new_profile.profileable = parent_or_child(params)
+        new_profile.save
+        if new_profile.valid?
+            session[:user_id] = new_profile.id
+            render json: new_profile, status: :created 
+        else
+            render json: {errors: new_profile.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
-    def update             
-        profile = UserProfile.find(params[:id])
-        profile.update(user_profile_params)
+
+    def update      
+        profile = current_user
+        profile.update(user_params)
+        if profile
         render json: profile, status: :accepted
+        end
     end
 
     def destroy
@@ -32,11 +38,13 @@ class UserProfilesController < ApplicationController
         head :no_content
     end
 
-
     private
 
-    def user_profile_params
-        params.permit(:name, :age, :username, :email, :password, :password_confirmation, :profileable_type, :profileable_id )
+    def user_params #new user parameters accpeted from client form
+        params.permit( :email, :age, :username, :password, :password_confirmation, :profileable_type, :profileable_id)
     end
-
+    
+    def parent_params
+        params.permit(:name, image_url: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png")
+    end
 end

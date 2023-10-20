@@ -1,8 +1,7 @@
 class ChildSerializer < ActiveModel::Serializer
-  attributes :id, :image_url, :rewards, :user_profile, :reviews, :books
+  attributes :id, :parent_id, :name, :image_url, :rewards, :user_profile
 
-has_one :user_profile
-belongs_to :parent
-has_many :reviews
-has_many :books, through: :reviews
+  has_many :reviews
+  has_many :books, through: :reviews
+ 
 end

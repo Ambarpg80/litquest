@@ -1,5 +1,5 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :id, :summary, :rating
-  has_one :child
-  has_one :book
+  attributes :id, :child_id, :book_id, :summary, :rating
+
+belongs_to :child
 end

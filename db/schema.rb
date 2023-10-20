@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_170257) do
   end
 
   create_table "children", force: :cascade do |t|
+    t.string "name"
     t.string "image_url"
     t.string "rewards"
     t.bigint "parent_id", null: false
@@ -35,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_170257) do
   end
 
   create_table "parents", force: :cascade do |t|
-    t.string "email"
+    t.string "name"
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,10 +54,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_170257) do
   end
 
   create_table "user_profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "age"
-    t.string "username"
     t.string "email"
+    t.integer "age"
+    t.string "username"
     t.string "password_digest"
     t.string "profileable_type"
     t.string "profileable_id"

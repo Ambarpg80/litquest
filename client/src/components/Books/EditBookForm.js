@@ -29,7 +29,7 @@ function EditBookForm({book, onBookUpdate, showEditForm}){
     
        function handleBookEdit(e){
         e.preventDefault()
-        fetch(`/books/${book.id}`,{
+        fetch(`/my_books/${book.id}`,{
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(bookInput),

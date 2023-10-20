@@ -2,20 +2,29 @@ import React, {useState} from "react";
 import BookDetails from "./BookDetails";
 import NewBookForm from "./NewBookForm";
 
-function BookList({bookData, onDelete, onAddBook, onBookUpdate}){
-    const [showForm, setShowForm] = useState(false);
+
+function BookList({bookData, onDelete, onAddBook, onAddReview,onRemoveReview ,onUpdateReview}){
+    
+    const [showBookForm, setShowBookForm] = useState(false);
     const buttonStyle = { marginTop: "25px", marginBottom: "10px"}
     
-    function handleShowForm(){
-        setShowForm(!showForm)
+    function handleBookForm(){
+        setShowBookForm(!showBookForm)
     }
 
-    const displayedBooks = bookData.map(book =>  <div key={book.id} >  <BookDetails book={book} onBookUpdate={onBookUpdate} onDelete={onDelete}/>  </div> )
+    const displayedBooks = bookData.map(book =>  
+    <div key={book.id}> <BookDetails book={book} 
+                                     onDelete={onDelete} 
+                                     onAddReview={onAddReview} 
+                                     onRemoveReview={onRemoveReview} 
+                                     onUpdateReview={onUpdateReview}
+                        /> 
+    </div> )
     
     return(
         <div>
-        <button style={buttonStyle} onClick={handleShowForm}> Add Book </button> 
-        {showForm ? <NewBookForm onAddBook={onAddBook} handleShowForm={handleShowForm} /> : null} 
+        <button style={buttonStyle} onClick={handleBookForm}> Add Book </button> 
+        {showBookForm ? <NewBookForm onAddBook={onAddBook} handleBookForm={handleBookForm} /> : null} 
         {displayedBooks}
         </div>
     )

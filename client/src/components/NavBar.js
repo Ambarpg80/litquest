@@ -1,11 +1,15 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { NavLink } from 'react-router-dom';
 import LoginForm from "./sessions/LoginForm";
 import SignUpForm from "./sessions/SignUpForm";
+import { userContext } from './context/UserProvider';
+
 
 function NavBar(){
+    const {currentUser, isLoggedIn ,logout} =useContext(userContext)
     const [showLogin, setShowLogin] = useState(false)
     const [showSignUp, setShowSignUp] = useState(false)
+
     const linkStyle ={marginRight: "15px"}
     const logoutLink = {fontFamily: "Helvetica",
                             position: 'absolute',
@@ -27,19 +31,34 @@ function NavBar(){
 
     function handleshowLogin(){setShowLogin(!showLogin)}
     function handleshowSignUp(){setShowSignUp(!showSignUp)}
+
+    function logoutUser(){
+        fetch ("/logout",{
+         method: "DELETE"
+        })
+        .then(() => logout())      
+        }
+    
+    
+  
     return(
     <div>
        
         <nav className="App-header active" >
             <NavLink style={linkStyle} to="/"> LitQuest </NavLink>
-            <NavLink style={linkStyle} to="/books">Books</NavLink>
-            <NavLink style={loginLink} onClick={handleshowLogin}>Login</NavLink>
-            <NavLink style={signupLink} onClick={handleshowSignUp}>Signup</NavLink>
-            <NavLink style={logoutLink}  >Logout</NavLink>
+            <NavLink style={linkStyle} to="/dashboard">{isLoggedIn && (currentUser.profileable_type || 
+         currentUser.user_profile.profileable_type) ===  "Parent" ? "Dashboard": null }</NavLink>
+            <NavLink style={linkStyle} to="/my_books">{isLoggedIn && (currentUser.profileable_type || 
+         currentUser.user_profile.profileable_type) === "Child" ? "My Books": null }</NavLink>
+            <NavLink style={loginLink} onClick={handleshowLogin}>{isLoggedIn ? null : "Login"}</NavLink>
+            <NavLink style={signupLink} onClick={handleshowSignUp}>{isLoggedIn ? null : "Signup"} </NavLink>
+            <NavLink style={logoutLink}  onClick={logoutUser}>{isLoggedIn ? "Logout" : null} </NavLink>
+            {/* <img className="avatar" src={currentUser.image_url} alt={"user placeholder"} style={{signupLink}}></img>   */}
+        
         </nav>
         <header > 
-            { showLogin ? <LoginForm/> : null}
-            { showSignUp ? <SignUpForm/> : null}
+            { showLogin ? <LoginForm onShowLogin={handleshowLogin}/> : null}
+            { showSignUp ? <SignUpForm onShowSignUp={handleshowSignUp}/> : null}
         </header>
     </div> 
     )

@@ -1,9 +1,8 @@
 import React, {useState} from "react"; // , useContext
-// import { UserContext } from "./context/UserProvider";
 
-function NewBookForm({onAddBook, handleShowForm}){
+
+function NewBookForm({onAddBook, handleBookForm}){
     const [bookError, setBookError] = useState("")
-    // const {currentUser} = useContext(UserContext); 
     const [newBookInfo, setNewBookInfo] = useState({
         title: "",
         author: "",
@@ -29,7 +28,7 @@ function NewBookForm({onAddBook, handleShowForm}){
     
        function bookSubmission(e){
         e.preventDefault()
-        fetch(`/books`,{
+        fetch("/books",{
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(bookInput),
@@ -37,8 +36,8 @@ function NewBookForm({onAddBook, handleShowForm}){
         .then(res => {
             if(res.ok){
             res.json()
-            .then(newBook =>  { onAddBook(newBook)     
-                               handleShowForm()})
+            .then(newBook =>  { onAddBook(newBook)
+                                handleBookForm() })
             }else{
             res.json().then(error => setBookError( error.errors.map(err => <li key={err}>{err}</li>) ) )
             }
@@ -90,6 +89,7 @@ function NewBookForm({onAddBook, handleShowForm}){
             </form>
             {bookError}
           </div>
+          
        </div>
     )
 }

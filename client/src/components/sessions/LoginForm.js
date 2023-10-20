@@ -1,17 +1,17 @@
 import React, {useState, useContext} from 'react'
 import { userContext } from '../context/UserProvider';
 
-function LoginForm(){
+function LoginForm({onShowLogin}){
     const [loginError, setLoginError] = useState([])
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword]= useState("");
-    const [showSignup, setShowSignup] = useState(false)
     const {login} = useContext(userContext);
+    
     
 
     function handleLogin(e){
         e.preventDefault()
-        const loginParams = {email, password}           
+        const loginParams = {username, password}           
         fetch("/login",{
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -19,16 +19,15 @@ function LoginForm(){
         })
         .then(res => {
             if (res.ok){
-            res.json().then( user =>  login(user) )           
+            res.json().then( user =>  {login(user)
+                onShowLogin()} )           
            } else {
            res.json().then( err => setLoginError(err.error) )
            }
         })
     }   
 
-    function displaySignup(){
-        setShowSignup(!showSignup)
-    }
+    
 
 
     return (
@@ -36,11 +35,11 @@ function LoginForm(){
     <div className='auth-container'>
         <h1 >Welcome to LitQuest</h1>
        <form onSubmit={handleLogin}>
-            <label >Email:
+            <label >Username:
                 <input type="text" 
-                       id="email" 
-                       value={email}
-                       onChange={(e) => setEmail(e.target.value)}>
+                       id="username" 
+                       value={username}
+                       onChange={(e) => setUsername(e.target.value)}>
                 </input>
             </label> <br/>
             <label >Password:
@@ -52,7 +51,7 @@ function LoginForm(){
             </label> <br/>
             <button type="submit">Login</button>
         </form> 
-        <div onClick={displaySignup} >
+        <div >
         </div>
         <ul>{loginError}</ul>
     </div>

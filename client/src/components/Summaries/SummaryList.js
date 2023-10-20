@@ -1,9 +1,13 @@
 import React from "react";
+import SummaryDetails from "../summaries/SummaryDetails";
 
-function SummaryList(){
+function SummaryList({book, onUpdateReview, onRemoveReview}){
+    
     return(
-       <div >
-        {/* summaries.map(summary => <div key={summary.id}><SummaryDetails summary={summary}/></div>) */}
+       <div>
+        {book.reviews.map(review => 
+        <div key={review.id}> <SummaryDetails book={book} review={review} onUpdateReview={onUpdateReview} onRemoveReview={onRemoveReview}/>
+        </div> )}
        </div>
     )
 }

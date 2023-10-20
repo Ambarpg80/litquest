@@ -1,35 +1,38 @@
+
 import React, {useState} from "react";
-import EditBookForm from "./EditBookForm";
+// import EditBookForm from "./EditBookForm";
+import SummaryForm from "../summaries/SummaryForm";
+import SummaryList from "../summaries/SummaryList";
 
-function BookDetails({book, onDelete, onBookUpdate}){
+
+function BookDetails({book,onDelete, onAddReview, onRemoveReview, onUpdateReview}){
    const [editForm, setEditForm] = useState(false)
- const buttonStyling = {float: "left", marginRight: "5px", marginBottom: "10px"}
-
-   function showEditForm(){
-      setEditForm(!editForm)
-   }
-
-function deleteBook(){
-   fetch(`/books/${book.id}`,{
+   const buttonStyling = {float: "left", marginRight: "5px", marginBottom: "10px"}
+   const [showSummaries, setShowSummaries]= useState(false)
+   const buttonStyle = { marginTop: "25px", marginBottom: "10px"}
+   
+   // function showEditForm(){
+   //    setEditForm(!editForm)
+   // }
+   
+   function handleShowSummaries(){ setShowSummaries(!showSummaries) }
+   
+   function deleteBook(){
+      fetch(`/my_books/${book.id}`,{
       method: "DELETE" })
       .then(onDelete(book))
-     
-  
-}   
+   }  
 
     return(
       <div className="single-book">
-         <div>
-            <button onClick={deleteBook}
+         <button onClick={deleteBook}
                     style={buttonStyling} 
                     type="button"> Delete Book 
             </button>
-            <button onClick={showEditForm} 
+            {/* <button onClick={showEditForm} 
                     style={buttonStyling} 
                     type="button"> Edit Book 
-            </button> 
-            {editForm ? <EditBookForm book={book} onBookUpdate={onBookUpdate} showEditForm={showEditForm} /> : null}
-         </div>
+            </button> */}
          <div className="book-details">
             <div className="thumbnail" style={{border: "1px solid rgb(65, 78, 67)"}}>
                <img src={book.thumbnail_url} alt={book.title} ></img> 
@@ -45,9 +48,10 @@ function deleteBook(){
                <p>{book.preview}</p>
             </div>
          </div> 
-      <button > Add Summary </button>
+         <button style={buttonStyle} onClick={handleShowSummaries}>See Summaries </button>
+        {showSummaries ? <div><SummaryForm book={book} handleShowSummaries={handleShowSummaries} onAddReview={onAddReview} onUpdateReview={onUpdateReview} /></div> : null} 
+        {showSummaries ? <div> <SummaryList book={book} onUpdateReview={onUpdateReview} onRemoveReview={onRemoveReview} /></div>: null} 
       </div>
     )
 }
-
 export default BookDetails;

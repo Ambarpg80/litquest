@@ -1,6 +1,32 @@
 .App {
   text-align: center;
 }
+ 
+.home-page{
+  margin-left: 15%;
+  width: 1200px;
+  height: 80vh;  
+}
+
+span.home-font{
+  font-size: 80px;
+  color: ivory;
+  position: relative;
+  top: 45vh;
+  text-align: center;
+}
+
+.avatar{
+  /* background-image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"; */
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  border: 1px solid rgb(65, 78, 67);
+  position: absolute;
+  top: 10;
+  right: 120; 
+  text-decoration: none;
+}
 
 .App-logo {
   height: 40vmin;
@@ -22,10 +48,12 @@
    color: white
 }
 .auth-container{    /*job card container */
-  background-color: #bddbb8;
+  /* transition-timing-function: ease-in-out;
+  transition-duration: 10s; */
+  display: flex-box;
   font-size : 20px;
   color:#0c2d11; 
-  padding-left: 480%;
+ 
   
   padding-top: 30px;
   padding-bottom: 50px;

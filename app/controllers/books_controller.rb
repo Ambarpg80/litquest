@@ -1,10 +1,10 @@
 class BooksController < ApplicationController
-    
+   
+
     def index 
-        user = current_user.profileable
-        # byebug
-        users_books = user.books
-        render json: users_books, status: :ok
+        child = current_user.profileable
+        childs_books = child.books
+        render json: childs_books, status: :ok
     end
 
     def show
@@ -13,8 +13,9 @@ class BooksController < ApplicationController
     end
 
     def create 
-        child = current_user.profileable
         # byebug
+        user = current_user
+        child = Child.find_by(id: user[:profileable_id])
         new_book = child.books.create!(book_params)
         new_book.valid?
         render json: new_book, status: :created
@@ -38,6 +39,11 @@ class BooksController < ApplicationController
     def book_params
         params.permit(:title, :author, :publisher, :genre, :thumbnail_url, :preview)
     end
+
+    def find_child
+        Child.find_by(id: user[:profileable_id])
+    end
+
 end
 # title author publisher genre thumbnail_url preview
 # title: author: publisher: genre: thumbnail_url: preview:

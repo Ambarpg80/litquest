@@ -1,14 +1,13 @@
-import React, {useContext} from "react";   
+import React from "react";   
 import ChildDetails from "./ChildDetails";
-import { userContext } from "./context/UserProvider";
 
-function ChildrenList({showChildren}){
-  const {currentUser} = useContext(userContext)
-  console.log(showChildren)
+function ChildrenList({children}){
+   
+  const childrensList = children.map(child=> <div key={child.name}><ChildDetails child={child}/></div>)
      return(
     <div >
       
-       {showChildren.map(child=> <div key={child.name}><ChildDetails child={child}/></div>)}
+       {childrensList}
 
      </div>
      )//

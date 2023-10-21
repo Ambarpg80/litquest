@@ -6,7 +6,7 @@ import SummaryList from "../summaries/SummaryList";
 
 
 function BookDetails({book,onDelete, onAddReview, onRemoveReview, onUpdateReview}){
-   const [editForm, setEditForm] = useState(false)
+   // const [editForm, setEditForm] = useState(false)
    const buttonStyling = {float: "left", marginRight: "5px", marginBottom: "10px"}
    const [showSummaries, setShowSummaries]= useState(false)
    const buttonStyle = { marginTop: "25px", marginBottom: "10px"}

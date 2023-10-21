@@ -4,16 +4,17 @@ Rails.application.routes.draw do
   # namespace :api do
   # Defines the root path route ("/")
   #  root "books#index"
-  resources :books, only: [:index, :show, :create, :update, :destroy]
+  resources :books, only: [ :show, :create, :update, :destroy]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   resources :children, only: [:index, :show, :create, :update, :destroy]
-  resources :parents, only: [:index, :show, :create, :update, :destroy]
+  resources :parents, only: [:index, :show, :create, :update, :destroy] 
   resources :user_profiles, only: [:index, :update, :destroy]
  
-  delete "/books/:id/reviews", to: "reviews#remove_reviews"
+  get "/me/books", to: "books#index"
 
-  get "me/children", to: "parent#my_children"
+  get "me/children", to: "parents#my_children"
   get "me/children/:id", to: "children#show"
+  
   get "/me", to: "user_profiles#show"  #sign user in automatically on re-render
   post "/signup", to: "user_profiles#create" #create user account
 

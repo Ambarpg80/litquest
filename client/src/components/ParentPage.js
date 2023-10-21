@@ -5,17 +5,16 @@ import { userContext } from "./context/UserProvider";
 
 function ParentPage(){ //parents will only be able to read child content
     const [childSignUp, setChildSignUp] = useState(false)
-    const [showChildren, setShowChildren]= useState([])
     const {currentUser} = useContext(userContext)
-   
+   const[children, setChildren]= useState([])
     
     function signUpChild(){setChildSignUp(!childSignUp) }
-
-    useEffect(()=>{
-        fetch(`/me/children`)
-        .then(res=> res.json())
-        .then(kids=>setShowChildren(kids))
-    },[])
+    
+useEffect(()=>{
+    fetch("/me/children")
+    .then(res => res.json())
+    .then(kids => setChildren(kids))},[])
+   
 
 return(
     <div >
@@ -26,7 +25,7 @@ return(
             <h3>Children</h3>
             <div> 
                 <div > 
-                    {<ChildrenList showChildren={showChildren}/> }
+                    {<ChildrenList children={children} /> }
                 </div>
             </div> 
           

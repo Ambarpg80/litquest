@@ -1,5 +1,5 @@
 import React from "react";
-import BookList from "./books/BookList";
+
 function ChildDetails({child}){
     console.log(child)
     const {books, name, reviews, user_profile, rewards} = child

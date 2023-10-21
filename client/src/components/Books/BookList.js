@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from "react";
 import BookDetails from "./BookDetails";
 import NewBookForm from "./NewBookForm";
-import { useParams } from "react-router-dom";
+
 // {bookData, onDelete, onAddBook, onAddReview,onRemoveReview ,onUpdateReview}
 function BookList(){
     const [bookData, setBookData] = useState([]);
     const [showBookForm, setShowBookForm] = useState(false);
     const buttonStyle = { marginTop: "25px", marginBottom: "10px"}
     
-    
-
+  
   useEffect(() => {
     fetch(`/me/books`)
       .then(res => res.json())
@@ -78,8 +77,4 @@ function BookList(){
 }
 
 export default BookList;
-                                     {/* book={book} 
-                                     onDelete={onDelete} 
-                                     onAddReview={onAddReview} 
-                                     onRemoveReview={onRemoveReview} 
-                                     onUpdateReview={onUpdateReview} */}
+                                     

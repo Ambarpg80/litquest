@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/me/books", to: "books#index"
 
   get "me/children", to: "parents#my_children"
+  post "me/children", to: "children#create"
   get "me/children/:id", to: "children#show"
   
   get "/me", to: "user_profiles#show"  #sign user in automatically on re-render

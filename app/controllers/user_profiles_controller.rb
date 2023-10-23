@@ -17,7 +17,7 @@ class UserProfilesController < ApplicationController
         new_profile.save
         if new_profile.valid?
             session[:user_id] = new_profile.id
-            render json: new_profile, status: :created 
+            render json: new_profile.profileable, status: :created 
         else
             render json: {errors: new_profile.errors.full_messages}, status: :unprocessable_entity
         end

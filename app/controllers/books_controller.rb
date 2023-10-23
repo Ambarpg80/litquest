@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-   
+    skip_before_action :authorize , only: [:index, :create ]
 
     def index 
         child = current_user.profileable
@@ -13,10 +13,7 @@ class BooksController < ApplicationController
     end
 
     def create 
-        # byebug
-        user = current_user
-        child = Child.find_by(id: user[:profileable_id])
-        new_book = child.books.create!(book_params)
+        new_book = Book.create!(book_params)
         new_book.valid?
         render json: new_book, status: :created
     end

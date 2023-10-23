@@ -1,5 +1,5 @@
 class ParentsController < ApplicationController
-    skip_before_action :authorize , only: :create
+    skip_before_action :authorize , only: [:index, :create]
     
     def index 
         parents = Parent.all

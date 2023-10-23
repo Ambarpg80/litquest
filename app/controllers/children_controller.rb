@@ -12,7 +12,6 @@ class ChildrenController < ApplicationController
     end
 
     def create 
-        # byebug
         user = current_user
         parent = Parent.find_by(id: user[:profileable_id])
         new_profile = UserProfile.new(email: params[:email], 
@@ -25,17 +24,6 @@ class ChildrenController < ApplicationController
         new_profile.save
         render json: new_profile.profileable, status: :created
     end
-
-    # new_profile = UserProfile.new(user_params)
-    #     new_profile.profileable = parent_or_child(params)
-    #     new_profile.save
-    #     if new_profile.valid?
-    #         session[:user_id] = new_profile.id
-    #         render json: new_profile.profileable, status: :created 
-    #     else
-    #         render json: {errors: new_profile.errors.full_messages}, status: :unprocessable_entity
-    #     end
-    # end
 
     def update 
         child = Child.find(params[:id])

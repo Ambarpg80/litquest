@@ -22,7 +22,6 @@ function App() {
             <Route exact path="/" element={ <Home/> } /> 
             <Route path="/me/books" element={<BookList   />}   />
             <Route path="/me/children" element={<ParentPage />} />
-            {/* <Route path="/me/children/:id" element={<ChildrenDetails />} /> */}
             <Route path="/login" element= {<LoginForm/>} />
             <Route path="/logout" />
             <Route path= "/signup" element= {<SignUpForm/>} />

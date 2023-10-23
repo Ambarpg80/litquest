@@ -15,16 +15,34 @@ span.home-font{
   top: 45vh;
   text-align: center;
 }
+.whole-child{
+  display: block;
+  border: 1px solid rgb(65, 78, 67);
+  margin: 30px;
+}
+.book{
+  display: inline-flex;
+  border: 1px solid rgb(65, 78, 67);
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  /* width: 80%; */
+}
+
+table, th, td {
+  border: 1px solid;
+}
 
 .avatar{
-  /* background-image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"; */
-  width: 50px;
-  height: 50px;
-  border-radius: 40px;
+  src: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png";
+  display: flex;
+  width: 100px;
+  height: 100px;
+  /* border-radius: 40px; */
   border: 1px solid rgb(65, 78, 67);
-  position: absolute;
-  top: 10;
-  right: 120; 
+  position: relative;
+  margin: 20px;
   text-decoration: none;
 }
 

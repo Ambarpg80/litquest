@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import BookDetails from "./BookDetails";
 import NewBookForm from "./NewBookForm";
 
-// {bookData, onDelete, onAddBook, onAddReview,onRemoveReview ,onUpdateReview}
+
 function BookList(){
     const [bookData, setBookData] = useState([]);
     const [showBookForm, setShowBookForm] = useState(false);
@@ -55,7 +55,7 @@ function BookList(){
         setShowBookForm(!showBookForm)
     }
     
-    // const displayedBooks = (){}
+    
      
     
     return(

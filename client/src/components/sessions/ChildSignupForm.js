@@ -1,13 +1,12 @@
-import React, {useState, useContext} from 'react'
-import {userContext} from '../context/UserProvider'
+import React, {useState} from 'react'
 
 
-function SignUpForm({parentId, onShowSignUp}){
-    const {signup} = useContext(userContext);
+
+function ChildSignupForm({parentId, onChildSignup, onShowSignUp}){
     const [signUpError, setsignUpError] = useState([])
     const [profileableName, setProfileableName]= useState("")
     const [newUser, setNewUser] = useState({
-            parent_id: parentId ,
+            parent_id: parentId,
             name: "",
             email: "",
             age: 0,
@@ -22,7 +21,7 @@ function SignUpForm({parentId, onShowSignUp}){
              [e.target.id]: e.target.value })
     }
 
-    function handleSignup(e){
+    function handleChildSignup(e){
         e.preventDefault()
         const profile = {parent_id: parseInt(parentId),
                          name: profileableName,
@@ -31,17 +30,18 @@ function SignUpForm({parentId, onShowSignUp}){
                          username: newUser.username,
                          password: newUser.password,
                          password_confirmation: newUser.password_confirmation}
-        fetch("/signup",{
+        fetch("/me/children",{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(profile)
        })
         .then(res => {
             if(res.ok){
-                (res.json()).then( user => {signup(user)
+                (res.json()).then(user => {onChildSignup(user)
                                           onShowSignUp()}) 
             }else{
-                res.json().then(err=> setsignUpError(err.errors.map(error => <li key={error}>{error}</li>)))
+                res.json().then(err=> console.log(err))
+                    // setsignUpError(err.errors.map(error => <li key={error}>{error}</li>)))
             }
             })
         }
@@ -50,7 +50,7 @@ function SignUpForm({parentId, onShowSignUp}){
     return(
     <div className= "auth-container">
         <h2 >Please Sign up</h2>
-        <form onSubmit={handleSignup}>
+        <form onSubmit={handleChildSignup}>
             <label > Name:
                 <input onChange={(e)=> setProfileableName(e.target.value) } 
                         type="text" 
@@ -93,4 +93,4 @@ function SignUpForm({parentId, onShowSignUp}){
     </div>
     )
 }
-export default SignUpForm
+export default ChildSignupForm;

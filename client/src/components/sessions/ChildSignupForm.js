@@ -40,8 +40,7 @@ function ChildSignupForm({parentId, onChildSignup, onShowSignUp}){
                 (res.json()).then(user => {onChildSignup(user)
                                           onShowSignUp()}) 
             }else{
-                res.json().then(err=> console.log(err))
-                    // setsignUpError(err.errors.map(error => <li key={error}>{error}</li>)))
+                res.json().then(err=> setsignUpError(err.errors.map(error => <li key={error}>{error}</li>)))
             }
             })
         }

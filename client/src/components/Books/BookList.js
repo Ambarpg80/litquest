@@ -15,7 +15,7 @@ function BookList(){
       .then(books => setBookData(books))
   }, []);
 
-  //  console.log(bookData)// 
+
   function handleBookAdded(addedBook){
   setBookData([...bookData, addedBook])
   

@@ -6,9 +6,7 @@ function LoginForm({onShowLogin}){
     const [username, setUsername] = useState("");
     const [password, setPassword]= useState("");
     const {login} = useContext(userContext);
-    
-    
-
+   
     function handleLogin(e){
         e.preventDefault()
         const loginParams = {username, password}           
@@ -26,9 +24,6 @@ function LoginForm({onShowLogin}){
            }
         })
     }   
-
-    
-
 
     return (
     

@@ -1,7 +1,6 @@
 import React, {useState, useContext} from 'react'
 import {userContext} from '../context/UserProvider'
 
-
 function SignUpForm({parentId, onShowSignUp}){
     const {signup} = useContext(userContext);
     const [signUpError, setsignUpError] = useState([])
@@ -46,7 +45,6 @@ function SignUpForm({parentId, onShowSignUp}){
             })
         }
 
-    
     return(
     <div className= "auth-container">
         <h2 >Please Sign up</h2>

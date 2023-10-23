@@ -2,11 +2,7 @@ import React from "react";
 
 
 function Home(){
-    //  const styling ={position: 'absolute',
-    //  top: "45vh", 
-    //  right: 30,
-      
-    // }
+   
     
   return(
     <div >  <span className="home-font">LitQuest</span>

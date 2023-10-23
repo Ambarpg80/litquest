@@ -1,9 +1,7 @@
-import React, {useState} from "react"; // , useContext
-// import { UserContext } from "./context/UserProvider";
+import React, {useState} from "react";
 
 function EditBookForm({book, onBookUpdate, showEditForm}){
     const [bookError, setBookError] = useState("")
-    // const {currentUser} = useContext(UserContext); 
     const [editedBook, setNewBookInfo] = useState({
         title: book.title,
         author: book.author,

@@ -28,7 +28,7 @@ function NewBookForm({onAddBook, handleBookForm}){
     
        function bookSubmission(e){
         e.preventDefault()
-        fetch("/books",{
+        fetch("/me/books",{
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(bookInput),

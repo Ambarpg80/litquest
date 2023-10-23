@@ -2,30 +2,25 @@ import React, {useState, useEffect} from "react";
 import BookDetails from "./BookDetails";
 import NewBookForm from "./NewBookForm";
 
-
 function BookList(){
     const [bookData, setBookData] = useState([]);
     const [showBookForm, setShowBookForm] = useState(false);
     const buttonStyle = { marginTop: "25px", marginBottom: "10px"}
     
-  
   useEffect(() => {
     fetch(`/me/books`)
       .then(res => res.json())
       .then(books => setBookData(books))
   }, []);
 
-
   function handleBookAdded(addedBook){
   setBookData([...bookData, addedBook])
-  
   }
   
   function handleBookRemoval(deletedBook){
     const filteredBookData = bookData.filter(book => book.id !== deletedBook.id ? book : null)
     setBookData(filteredBookData)
   }
-
 
   function addReview(addedReview){
     const oneBook = bookData.find(book => book.id === addedReview.book_id) //find single book to add review
@@ -51,12 +46,9 @@ function BookList(){
     setBookData(newFilteredList)
   }
 
-    function handleBookForm(){
-        setShowBookForm(!showBookForm)
-    }
-    
-    
-     
+  function handleBookForm(){
+    setShowBookForm(!showBookForm)
+  }
     
     return(
       <div>

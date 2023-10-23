@@ -1,12 +1,12 @@
 import React, {useState, useContext} from 'react'
 import {userContext} from '../context/UserProvider'
 
-function SignUpForm({parentId, onShowSignUp}){
+function SignUpForm({ onShowSignUp}){
     const {signup} = useContext(userContext);
     const [signUpError, setsignUpError] = useState([])
     const [profileableName, setProfileableName]= useState("")
     const [newUser, setNewUser] = useState({
-            parent_id: parentId ,
+            parent_id: null ,
             name: "",
             email: "",
             age: 0,
@@ -23,7 +23,7 @@ function SignUpForm({parentId, onShowSignUp}){
 
     function handleSignup(e){
         e.preventDefault()
-        const profile = {parent_id: parseInt(parentId),
+        const profile = {parent_id: null,
                          name: profileableName,
                          email: newUser.email,
                          age: parseInt(newUser.age),
@@ -46,7 +46,7 @@ function SignUpForm({parentId, onShowSignUp}){
         }
 
     return(
-    <div className= "auth-container">
+    <div className= "auth-container" >
         <h2 >Please Sign up</h2>
         <form onSubmit={handleSignup}>
             <label > Name:

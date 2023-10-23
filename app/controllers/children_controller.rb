@@ -12,8 +12,6 @@ class ChildrenController < ApplicationController
     end
 
     def create 
-        user = current_user
-        parent = Parent.find_by(id: user[:profileable_id])
         new_profile = UserProfile.new(email: params[:email], 
                                       age: params[:age], 
                                       username: params[:username], 

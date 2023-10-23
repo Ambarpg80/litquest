@@ -53,7 +53,6 @@ function NavBar(){
             <NavLink style={loginLink} onClick={handleshowLogin}>{isLoggedIn ? null : "Login"}</NavLink>
             <NavLink style={signupLink} onClick={handleshowSignUp}>{isLoggedIn ? null : "Signup"} </NavLink>
             <NavLink style={logoutLink}  onClick={logoutUser}>{isLoggedIn ? "Logout" : null} </NavLink>
-            {/* <img className="avatar" src={currentUser.image_url} alt={"user placeholder"} style={{signupLink}}></img>   */}
         
         </nav>
         <header > 

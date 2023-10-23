@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_170257) do
     t.string "name"
     t.string "image_url"
     t.string "rewards"
-    t.bigint "parent_id", null: false
+    t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_children_on_parent_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_170257) do
     t.string "summary"
     t.integer "rating"
     t.bigint "child_id", null: false
-    t.bigint "book_id", null: false
+    t.bigint "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"

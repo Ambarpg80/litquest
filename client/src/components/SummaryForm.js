@@ -1,68 +1,67 @@
 import React, {useState, useContext} from "react";
-import { userContext } from "../context/UserProvider";
+import { userContext } from "./context/UserProvider";
 
-function SummaryEditForm({book, review, showEditForm, onUpdateReview}){
-    const [sumEditError, setSumEditError] = useState("")
+function SummaryForm({book, handleShowSummaries, onAddReview}){
+    const [summaryError, setSummaryError] = useState("")
     const {currentUser} = useContext(userContext); 
-    const [editReview, setEditReview] = useState({
+    const [newReview, setNewReview] = useState({
            child_id: currentUser.id, 
            book_id: book.id,
-           summary: review.summary, 
-           rating: review.rating,
+           summary: "", 
+           rating: 0,
       });
       
        
        function handleChange(e){
-        setEditReview({...editReview , 
+        setNewReview({...newReview , 
                         [e.target.id]: e.target.value,});
        }
         
-       const reviewInput ={child_id: currentUser.child_id, 
-                         book_id: editReview.book_id ,
-                         summary: editReview.summary ,
-                         rating: editReview.rating ,
+       const reviewInput ={child_id: newReview.child_id, 
+                         book_id: newReview.book_id ,
+                         summary: newReview.summary ,
+                         rating: newReview.rating ,
                          }
     
-       function bookSubmission(e){
+       function reviewSubmission(e){
         e.preventDefault()
-        fetch(`/reviews/${review.id}`,{
-            method: "PATCH",
+        fetch(`/reviews`,{
+            method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(reviewInput),
         })
         .then(res => {
             if(res.ok){
-            res.json()
-            .then(editBook =>  { onUpdateReview(editBook)   
-                                 showEditForm()})
+            res.json().then(newReview =>  { onAddReview(newReview)   
+                                            handleShowSummaries() })
             }else{
-            res.json().then(error => setSumEditError( error.errors.map(err => <li key={err}>{err}</li>) ) )
+            res.json().then(error => setSummaryError( error.errors.map(err => <li key={err}>{err}</li>) ) )
             }
         })                        
         }
     return(
        <div >
         <div className='form-container'>
-            <form onSubmit={bookSubmission}>
+            <form onSubmit={reviewSubmission}>
                 <label>Summary: 
                     <textarea type="text"
                             id="summary"
-                            value={editReview.summary}
+                            value={newReview.summary}
                             onChange={handleChange}></textarea>
                 </label><br/>
                 <label> Rating:
                     <input type="text"
                             id="rating"
-                            value={editReview.rating}
+                            value={newReview.rating}
                             onChange={handleChange}></input>
                 </label><br/> 
                 
             <button type="submit"> Submit Summary </button>
             </form>
-            {sumEditError}
+            {summaryError}
           </div>
        </div>
     )
 }
 
-export default SummaryEditForm;
+export default SummaryForm;

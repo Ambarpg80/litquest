@@ -1,5 +1,5 @@
 import React from "react";
-import SummaryDetails from "../summaries/SummaryDetails";
+import SummaryDetails from "./SummaryDetails";
 
 function SummaryList({book, onUpdateReview, onRemoveReview}){
     

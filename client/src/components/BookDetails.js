@@ -1,7 +1,7 @@
 
 import React, {useState} from "react";
-import SummaryForm from "./summaries/SummaryForm";
-import SummaryList from "./summaries/SummaryList";
+import SummaryForm from "./SummaryForm";
+import SummaryList from "./SummaryList";
 
 
 function BookDetails({book,onDelete, onAddReview, onRemoveReview, onUpdateReview}){

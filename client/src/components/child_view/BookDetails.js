@@ -12,7 +12,7 @@ function BookDetails({book,onDelete, onAddReview, onRemoveReview, onUpdateReview
    function handleShowSummaries(){ setShowSummaries(!showSummaries) }
    
    function deleteBook(){
-      fetch(`/my_books/${book.id}`,{
+      fetch(`/me/books/${book.id}`,{
       method: "DELETE" })
       .then(onDelete(book))
    }  
@@ -38,7 +38,7 @@ function BookDetails({book,onDelete, onAddReview, onRemoveReview, onUpdateReview
                <p>{book.preview}</p>
             </div>
          </div> 
-         <button style={buttonStyle} onClick={handleShowSummaries}>See Summaries </button>
+         <button style={buttonStyle} onClick={handleShowSummaries}>{showSummaries ? "Close Sumaries" : "See Summaries"} </button>
         {showSummaries ? <div><SummaryForm book={book} handleShowSummaries={handleShowSummaries} onAddReview={onAddReview} onUpdateReview={onUpdateReview} /></div> : null} 
         {showSummaries ? <div> <SummaryList book={book} onUpdateReview={onUpdateReview} onRemoveReview={onRemoveReview} /></div>: null} 
       </div>

@@ -14,7 +14,10 @@ class BooksController < ApplicationController
 
     def create 
         child= current_user.profileable
-        new_book = child.books.create!(book_params)
+        new_book = child.books.new(book_params) #new book instance
+        new_book.reviews.new(book_id: new_book.id, child_id: child.id, summary: params[:summary]) #new review instance
+        new_book.save #save new book 
+        new_book.reviews.create #save new book review
         new_book.valid?
         render json: new_book, status: :created
     end
@@ -38,9 +41,7 @@ class BooksController < ApplicationController
         params.permit(:title, :author, :publisher, :genre, :thumbnail_url, :preview)
     end
 
-    def find_child
-        Child.find_by(id: user[:profileable_id])
-    end
+   
 
 end
 # title author publisher genre thumbnail_url preview

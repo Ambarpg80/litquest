@@ -20,6 +20,9 @@ Things you may want to cover:
         https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png
     * Homepage- Cerritos library entrance
         https://lh5.googleusercontent.com/p/AF1QipNPlvI-xFrHSMfxUQRh2z7Zk0EwE_QRZBXXrW6k=w800-h600-k-no
+    * User profile Avatars:
+     * Girl: https://img.freepik.com/free-vector/hand-drawn-caricature-illustration_23-2149871987.jpg?size=338&ext=jpg&ga=GA1.1.386372595.1697932800&semt=ais
+     * Boy: https://i.pinimg.com/originals/aa/97/48/aa9748f05c476ade5ffcb2cc15643372.png
 
 * This app has 2 types of users in mind: a parent and a child.
     * All users can currently sign up and login to their accounts. 

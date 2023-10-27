@@ -48,7 +48,7 @@ function ChildSignupForm({parentId, onChildSignup, onShowSignUp}){
     
     return(
     <div className= "auth-container">
-        <h2 >Please Sign up</h2>
+        <p> Once you add a child, they will be able to access their account. As they add books, you will be able to see what they are working on .</p>
         <form onSubmit={handleChildSignup}>
             <label > Name:
                 <input onChange={(e)=> setProfileableName(e.target.value) } 

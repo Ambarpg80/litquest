@@ -30,8 +30,9 @@ function ParentPage(){ //parents will only be able to read child content
 
 return(
     <div >
-          <button onClick={handleChildForm}>Add a Child</button>
-                {showForm ? <div> <ChildSignupForm parentId={currentUser.id} onShowSignUp={handleChildForm} onChildSignup={addChild} /> </div>: null}
+        <p> Click on the button to add your child below </p>
+          <button onClick={handleChildForm} >Add a Child</button>
+                {showForm ? <div> <ChildSignupForm parentId={currentUser.id} onShowSignUp={handleChildForm} onChildSignup={addChild} />  </div>: null}
         <div>
             <h3>Children</h3>
             <div> 

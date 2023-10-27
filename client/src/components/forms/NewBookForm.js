@@ -3,6 +3,7 @@ import React, {useState} from "react";
 
 function NewBookForm({onAddBook, handleBookForm}){
     const [bookError, setBookError] = useState("")
+    const [newBookSummary, setNewBookSummary]= useState("")
     const [newBookInfo, setNewBookInfo] = useState({
         title: "",
         author: "",
@@ -24,6 +25,7 @@ function NewBookForm({onAddBook, handleBookForm}){
                          genre: newBookInfo.genre ,
                          thumbnail_url: newBookInfo.thumbnail_url,
                          preview: newBookInfo.preview ,
+                         summary: newBookSummary,
                          }
     
        function bookSubmission(e){
@@ -45,6 +47,7 @@ function NewBookForm({onAddBook, handleBookForm}){
         }
     return(
        <div >
+        <p> Add a book and summary below.</p>
         <div className='form-container'>
             <form onSubmit={bookSubmission}>
                 <label>Title: 
@@ -83,6 +86,13 @@ function NewBookForm({onAddBook, handleBookForm}){
                               id="preview"
                               value={newBookInfo.preview}
                               onChange={handleChange}>
+                    </textarea>
+                </label><br/>
+                <label> Book Summary:
+                    <textarea type="text"
+                              id="summary"
+                              value={newBookSummary}
+                              onChange={(e)=>setNewBookSummary(e.target.value)}>
                     </textarea>
                 </label><br/>
             <button type="submit"> Submit Book </button>

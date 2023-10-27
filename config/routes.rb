@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # namespace :api do
   # Defines the root path route ("/")
   #  root "books#index"
-  resources :books, only: [ :show, :update, :destroy]
+  resources :books, only: [ :show, :update]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   resources :children, only: [:index, :show, :create, :update, :destroy]
   resources :parents, only: [:index, :show, :create, :update, :destroy] 
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
  
   get "/me/books", to: "books#index"
   post "me/books", to: "books#create"
+  delete "me/books/:id", to: "books#destroy"
 
   get "me/children", to: "parents#my_children"
   post "me/children", to: "children#create"

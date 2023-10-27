@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import BookDetails from "./BookDetails";
-import NewBookForm from "./NewBookForm";
+import NewBookForm from "../NewBookForm";
 
 function BookList(){
     const [bookData, setBookData] = useState([]);

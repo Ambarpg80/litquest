@@ -6,7 +6,7 @@ import LoginForm from './sessions/LoginForm';
 import SignUpForm from './sessions/SignUpForm';
 import NavBar from './NavBar';
 import Home from './Home'
-import BookList from './BookList';
+import BookList from './child_view/BookList.js';
 import ParentPage from './ParentPage';
 
 

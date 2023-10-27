@@ -40,7 +40,7 @@ function ChildSignupForm({parentId, onChildSignup, onShowSignUp}){
                 (res.json()).then(user => {onChildSignup(user)
                                           onShowSignUp()}) 
             }else{
-                res.json().then(err=> setsignUpError(err.errors.map(error => <li key={error}>{error}</li>)))
+                res.json().then(err => setsignUpError(err.errors.map(error => <ul key={error}><li> {error} </li></ul> ) ) )
             }
             })
         }
@@ -88,7 +88,7 @@ function ChildSignupForm({parentId, onChildSignup, onShowSignUp}){
             </label> <br/>
             <button>Sign Up</button>
         </form>
-         {signUpError}
+       {signUpError}
     </div>
     )
 }

@@ -19,8 +19,10 @@ class ChildrenController < ApplicationController
                                       password_confirmation: params[:password_confirmation],
                                       )
         new_profile.profileable = Child.create!(child_params)
-        new_profile.save
+        new_profile.save!
+       if new_profile.valid?
         render json: new_profile.profileable, status: :created
+       end
     end
 
     def update 

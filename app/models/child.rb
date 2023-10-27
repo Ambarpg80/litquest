@@ -6,4 +6,6 @@ class Child < ApplicationRecord
   belongs_to :parent, optional: true
   has_many :reviews, dependent: :destroy
   has_many :books, through: :reviews
+
+  validates :name, presence: true
 end

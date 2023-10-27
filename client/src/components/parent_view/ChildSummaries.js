@@ -1,20 +1,21 @@
 import React from "react"
-import ChildSummaryDetails from "./ChildSummaryDetail";
 
-function ChildSummaries({ book }){
+function ChildSummaries({ book, reviews, }){
    
 
     return(
-        <div  className="book">
-          <details > 
-            <summary> <b>Book:</b> {book.title} , <b>By:</b>  {book.author} </summary> 
-              {book.reviews.map(review => 
-            <div >
-              <ChildSummaryDetails review={review}/>
-            </div> 
+        <div>
+            <details  key={book.id}> 
+              <summary> <b>Book:</b> {book.title} , <b>By:</b>  {book.author} </summary>
+            {reviews.map(review => 
+             <div key={review.id}>
+               <p  style={{alignText: "left"}}>
+                <b>Summary: </b> {review.summary} <br/>
+                <b>Rating: </b> {review.rating} out of 5
+               </p> <br/>
+             </div>
             )}
-          </details>
-          
+            </details>
         </div>
     )
 }

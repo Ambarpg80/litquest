@@ -7,7 +7,7 @@ import SignUpForm from './sessions/SignUpForm';
 import NavBar from './NavBar';
 import Home from './Home'
 import BookList from './child_view/BookList.js';
-import ParentPage from './ParentPage';
+import ParentPage from './parent_view/ParentPage';
 
 
 function App() { 

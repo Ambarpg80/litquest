@@ -1,13 +1,9 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import SummaryEditForm from "../forms/SummaryEditForm";
-import { userContext } from "../context/UserProvider";
 
 function SummaryDetails({review, book, onUpdateReview, onRemoveReview }){
-   const {refreshBooks} = useContext(userContext);
 const[editForm, setEditForm] = useState(false)
 const buttonStyling = { marginRight: "5px", marginBottom: "10px"}
-
-console.log(review)
 
 function showEditForm(){
       setEditForm(!editForm)

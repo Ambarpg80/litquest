@@ -1,9 +1,8 @@
 import React, {useState} from "react"; 
 
+
 function NewBookForm({onAddBook, handleBookForm}){
     const [bookError, setBookError] = useState("")
-    const [newBookSummary, setNewBookSummary]= useState("")
-    const [newBookRating, setNewBookRating]= useState("")
     const [newBookInfo, setNewBookInfo] = useState({
         title: "",
         author: "",
@@ -25,8 +24,6 @@ function NewBookForm({onAddBook, handleBookForm}){
                          genre: newBookInfo.genre ,
                          thumbnail_url: newBookInfo.thumbnail_url,
                          preview: newBookInfo.preview ,
-                         summary: newBookSummary,
-                         rating: parseInt(newBookRating)
                          }
     
        function bookSubmission(e){
@@ -88,18 +85,6 @@ function NewBookForm({onAddBook, handleBookForm}){
                               onChange={handleChange}>
                     </textarea>
                 </label><br/>
-                <label>Summary: 
-                    <textarea type="text"
-                            id="summary"
-                            value={newBookSummary}
-                            onChange={(e)=>setNewBookSummary(e.target.value)}></textarea>
-                </label><br/>
-                <label> Rating:
-                    <input type="text"
-                            id="rating"
-                            value={newBookRating}
-                            onChange={(e)=>setNewBookRating(e.target.value)}></input>
-                </label><br/> 
             <button type="submit"> Submit Book </button>
             </form>
             {bookError}

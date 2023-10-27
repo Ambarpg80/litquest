@@ -25,7 +25,7 @@ function SummaryForm({book, handleShowSummaries, onAddReview}){
     
        function reviewSubmission(e){
         e.preventDefault()
-        fetch(`/me/books/${book.id}/reviews`,{
+        fetch(`/reviews`,{
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(reviewInput),
@@ -56,7 +56,7 @@ function SummaryForm({book, handleShowSummaries, onAddReview}){
                             onChange={handleChange}></input>
                 </label><br/> 
                 
-            <button type="submit"> Submit & Add to Reading List </button>
+            <button type="submit"> Submit Summary </button>
             </form>
             {summaryError}
           </div>

@@ -25,7 +25,7 @@ function SummaryEditForm({book, review, showEditForm, onUpdateReview}){
     
        function bookSubmission(e){
         e.preventDefault()
-        fetch(`/me/books/${book.id}/reviews/${review.id}`,{
+        fetch(`/reviews/${review.id}`,{
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(reviewInput),

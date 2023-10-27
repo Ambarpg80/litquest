@@ -13,8 +13,8 @@ class BooksController < ApplicationController
     end
 
     def create 
-        
-        new_book = Book.create!(book_params)
+        child= current_user.profileable
+        new_book = child.books.create!(book_params)
         new_book.valid?
         render json: new_book, status: :created
     end

@@ -5,20 +5,28 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 3.0
 
-* System dependencies
+* Database : postgresql
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+* no test suite
 
 * Deployment instructions
+    * running backend requires rails s command to run server on localhost:3000
+    * running frontend requires npm start --prefix client command to run react app on localhost:4000
 
-* ...
+* Images 
+    * Generic profile pic placeholder:
+        https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png
+    * Homepage- Cerritos library entrance
+        https://lh5.googleusercontent.com/p/AF1QipNPlvI-xFrHSMfxUQRh2z7Zk0EwE_QRZBXXrW6k=w800-h600-k-no
+
+* This app has 2 types of users in mind: a parent and a child.
+    * All users can currently sign up and login to their accounts. 
+    * When a parent account is created, it is currently with the intention of having 3 main actions: 
+        * Creating accounts for their children.
+        * Deleting accounts accounts for their children.
+        * Reading the summaries that their children create about the books that they're reading.
+    * When a child account is created, it is currently with the intention that:
+        * The child will add books to their list.
+        * Add, delete and update the summaries that they create.

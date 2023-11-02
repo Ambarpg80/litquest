@@ -1,7 +1,7 @@
 import React, {useState, useContext} from "react";
 import { userContext } from "../context/UserProvider";
 
-function SummaryEditForm({book, review, showEditForm, onUpdateReview}){
+function SummaryEditForm({book, review, showEditForm, onUpdateReview }){
     const [sumEditError, setSumEditError] = useState("")
     const {currentUser} = useContext(userContext); 
     const [editReview, setEditReview] = useState({

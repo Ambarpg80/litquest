@@ -1,11 +1,12 @@
-import React, {useState} from "react";
+import React, { useState} from "react";
 import SummaryEditForm from "../forms/SummaryEditForm";
 
-function SummaryDetails({review, book, onUpdateReview, onRemoveReview }){
-const[editForm, setEditForm] = useState(false)
-const buttonStyling = { marginRight: "5px", marginBottom: "10px"}
 
-function showEditForm(){
+function SummaryDetails({review, book, onRemoveReview, onUpdateReview }){
+   const[editForm, setEditForm] = useState(false)
+   const buttonStyling = { marginRight: "5px", marginBottom: "10px"}
+
+   function showEditForm(){
       setEditForm(!editForm)
    }
 
@@ -17,7 +18,7 @@ function showEditForm(){
   
    return(
        <div >
-          { editForm ? <SummaryEditForm book={book} review={review} showEditForm={showEditForm} onUpdateReview={onUpdateReview}/> :
+          { editForm ? <SummaryEditForm book={book} review={review} showEditForm={showEditForm} onUpdateReview={onUpdateReview} /> :
           <div>
           <p>Summary: {review.summary}</p> 
           <p>Rating: {review.rating} out of 5</p>

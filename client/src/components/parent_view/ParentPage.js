@@ -1,43 +1,22 @@
-import React, {useContext, useState, useEffect} from "react";
+import React, { useState} from "react";
 import ChildrenList from "./ChildrenList";
-import { userContext } from "../context/UserProvider";
 import ChildSignupForm from "../sessions/ChildSignupForm";
 
 function ParentPage(){ //parents will only be able to read child content
     const [showForm, setShowForm] = useState(false)
-    const {currentUser} = useContext(userContext)
-   const[children, setChildren]= useState([])
+     function handleChildForm(){setShowForm(!showForm) }
     
    
-    useEffect(()=>{
-        fetch("/me/children")
-        .then(res => res.json())
-        .then(kids => setChildren(kids))
-        },
-    [])
-   
- function handleChildForm(){setShowForm(!showForm) }
-
-    function addChild(newChild){
-      setChildren([...children, newChild])  
-    }
-
-    function handleDeletedChild(deletedChild){
-      const filteredChildren = children.filter(child => child.id !== deletedChild.id)
-      setChildren(filteredChildren)
-    }
-
-
-return(
+  return(
     <div >
         <p> Click on the button to add your child below </p>
           <button onClick={handleChildForm} style={{marginBottom: "15px"}}>Add a Child</button>
-                {showForm ? <div> <ChildSignupForm parentId={currentUser.id} onShowSignUp={handleChildForm} onChildSignup={addChild} />  </div>: null}
+                {showForm ? <div> <ChildSignupForm  onShowSignUp={handleChildForm} />  </div>: null}
         <div>
             <h3>Children</h3>
             <div> 
                 <div > 
-                    {<ChildrenList children={children} onDeleteChild={handleDeletedChild} /> }
+                    {<ChildrenList  /> }
                 </div>
             </div> 
           

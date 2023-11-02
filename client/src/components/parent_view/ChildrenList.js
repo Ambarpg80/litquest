@@ -1,11 +1,12 @@
-import React from "react";   
+import React, {useContext} from "react";   
 import ChildDetails from "./ChildDetails";
+import { userContext } from "../context/UserProvider";
 
-function ChildrenList({children, onDeleteChild}){
-  
+function ChildrenList(){
+  const {kids} = useContext(userContext);
   return(
     <div >
-      {children.map(child=> <div key={child.name}> <ChildDetails child={child} onDeleteChild={onDeleteChild}/> </div> )}
+      {kids.map(child=> <div key={child.name}> <ChildDetails child={child} /> </div> )}
     </div>
   )
 }

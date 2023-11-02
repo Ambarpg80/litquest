@@ -92,6 +92,7 @@ table, th, td {
 .thumbnail{
   display: block;
   text-align: center;
+  height: 200px;
   width: 150px;
   padding: 10px;
 }

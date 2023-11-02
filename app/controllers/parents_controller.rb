@@ -29,11 +29,6 @@ class ParentsController < ApplicationController
         head :no_content
     end
 
-    def my_children
-        user = current_user.profileable
-        render json: user.children, status: :ok
-    end
-
     private
 
     def parent_params

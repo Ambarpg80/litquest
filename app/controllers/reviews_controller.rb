@@ -12,8 +12,7 @@ class ReviewsController < ApplicationController
     end
 
     def create 
-        user = current_user.profileable
-        new_review = user.reviews.create!(review_params)
+        new_review = Review.create!(review_params)
         if new_review.valid?
         render json: new_review, status: :created
         end
@@ -21,16 +20,20 @@ class ReviewsController < ApplicationController
 
     def update 
         user = current_user.profileable
-        review = user.reviews.find_by(id: params[:id])
+        review = Review.find_by(id: params[:id]) 
+        if user&.id == review.child_id
         review.update!(review_params)
         render json: review, status: :accepted
+        end
     end
 
     def destroy
         user = current_user.profileable
-        review = user.reviews.find_by(id: params[:id])
+        review = Review.find_by(id: params[:id]) 
+        if user&.id == review.child_id
         review.destroy
         head :no_content
+        end
     end
   
 

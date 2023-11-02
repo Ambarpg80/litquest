@@ -4,25 +4,25 @@ import SummaryForm from "../forms/SummaryForm";
 import SummaryList from "./SummaryList";
 
 
-function BookDetails({book,onDelete, onAddReview, onRemoveReview, onUpdateReview}){
-   const buttonStyling = {float: "left", marginRight: "5px", marginBottom: "10px"}
+function BookDetails({book, onAddReview, onRemoveReview, onUpdateReview}){
+   // const buttonStyling = {float: "left", marginRight: "5px", marginBottom: "10px"}
    const [showSummaries, setShowSummaries]= useState(false)
    const buttonStyle = { marginTop: "25px", marginBottom: "10px"}
    
    function handleShowSummaries(){ setShowSummaries(!showSummaries) }
    
-   function deleteBook(){
-      fetch(`/me/books/${book.id}`,{
-      method: "DELETE" })
-      .then(onDelete(book))
-   }  
+   // function deleteBook(){    //delete all Reviews for the currentUser
+   //    fetch(`/me/books/${book.id}`,{
+   //    method: "DELETE" })
+   //    .then(onDelete(book))
+   // }  
 
     return(
       <div className="single-book">
-         <button onClick={deleteBook}
+         {/* <button onClick={deleteBook}
                     style={buttonStyling} 
                     type="button"> Delete Book 
-         </button>
+         </button> */}
          <div className="book-details">
             <div className="thumbnail" style={{border: "1px solid rgb(65, 78, 67)"}}>
                <img src={book.thumbnail_url} alt={book.title} ></img> 

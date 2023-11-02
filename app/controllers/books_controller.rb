@@ -1,10 +1,9 @@
 class BooksController < ApplicationController
     skip_before_action :authorize , only: [:index, :create ]
 
-    def index 
-        child = current_user.profileable
-        childs_books = child.books
-        render json: childs_books, status: :ok
+    def index
+        books = Book.all
+        render json: books, status: :ok
     end
 
     def show
@@ -14,10 +13,8 @@ class BooksController < ApplicationController
 
     def create 
         child= current_user.profileable
-        new_book = child.books.new(book_params) #new book instance
-        new_book.reviews.new(book_id: new_book.id, child_id: child.id, summary: params[:summary]) #new review instance
-        new_book.save #save new book 
-        new_book.reviews.create #save new book review
+        new_book = Book.create(book_params)
+        new_book.reviews.create(book_id: new_book.id, child_id: child.id, summary: params[:summary])
         new_book.valid?
         render json: new_book, status: :created
     end

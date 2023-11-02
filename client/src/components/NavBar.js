@@ -48,7 +48,7 @@ function NavBar(){
             <NavLink style={linkStyle} to="/"> LitQuest </NavLink>
             <NavLink style={linkStyle} to="/me/children">{isLoggedIn && 
          currentUser.user_profile.profileable_type ===  "Parent" ? "Dashboard": null }</NavLink>
-            <NavLink style={linkStyle} to="/me/books">{isLoggedIn && 
+            <NavLink style={linkStyle} to="/my_books">{isLoggedIn && 
          currentUser.user_profile.profileable_type === "Child" ? "My Books": null }</NavLink>
             <NavLink style={loginLink} onClick={handleshowLogin}>{isLoggedIn ? null : "Login"}</NavLink>
             <NavLink style={signupLink} onClick={handleshowSignUp}>{isLoggedIn ? null : "Signup"} </NavLink>

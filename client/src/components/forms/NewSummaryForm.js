@@ -1,18 +1,19 @@
 import React, {useState, useContext} from "react";
 import { userContext } from "../context/UserProvider";
 
-function SummaryForm({book, onAddReview, handleShowSummaries}){
-    const [summaryError, setSummaryError] = useState("")
+function NewSummaryForm({ allBooks, handleShowSummaries, onAddReview}){
+    const [newSummaryError, setNewSummaryError] = useState("")
     const {currentUser} = useContext(userContext); 
     const [newReview, setNewReview] = useState({
            child_id: currentUser.id, 
-           book_id: book.id,
+           book_id: 0,
            summary: "", 
            rating: 0,
       });
       
        
        function handleChange(e){
+        // console.log(e.target.id, e.target.value)
         setNewReview({...newReview , 
                         [e.target.id]: e.target.value,});
        }
@@ -35,7 +36,7 @@ function SummaryForm({book, onAddReview, handleShowSummaries}){
             res.json().then(newReview =>  { onAddReview(newReview)   
                                             handleShowSummaries() })
             }else{
-            res.json().then(error => setSummaryError( error.errors.map(err => <li key={err}>{err}</li>) ) )
+            res.json().then(error => setNewSummaryError( error.errors.map(err => <li key={err}>{err}</li>) ) )
             }
         })                        
         }
@@ -43,7 +44,16 @@ function SummaryForm({book, onAddReview, handleShowSummaries}){
        <div >
         
         <div className='form-container'>
-            <form onSubmit={reviewSubmission}>
+          <form onSubmit={reviewSubmission}>
+           <label> Select A Book : 
+            <select style={{marginLeft:"10px"}} onChange={handleChange} id="book_id" value={newReview.book_id}>
+                {allBooks.map(sumBk=> 
+                    <option key={sumBk.id} 
+                            id="book_id"
+                            value={sumBk.id}> {sumBk.title}, by {sumBk.author}
+                    </option>)}
+              </select>
+            </label><br/>
                 <label>Summary: 
                     <textarea type="text"
                             id="summary"
@@ -58,10 +68,10 @@ function SummaryForm({book, onAddReview, handleShowSummaries}){
                 </label><br/> 
             <button type="submit"> Submit Summary </button>
             </form>
-            {summaryError}
+            {newSummaryError}
           </div>
        </div>
     )
 }
 
-export default SummaryForm;
+export default NewSummaryForm;

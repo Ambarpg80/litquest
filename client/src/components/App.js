@@ -8,7 +8,7 @@ import NavBar from './NavBar';
 import Home from './Home'
 import BookList from './child_view/BookList.js';
 import ParentPage from './parent_view/ParentPage';
-
+import ChildDetails from './parent_view/ChildDetails';
 
 function App() { 
   const {kidsBooks, setKidsBooks} = useContext(userContext);
@@ -26,7 +26,9 @@ function handleBookAdded(addedBook){
 setAllBooks(addedBookList)
 setKidsBooks([...kidsBooks, addedBook])
 }
-console.log(kidsBooks)
+
+// console.log(kidsBooks)
+
 // function handleBookRemoval(deletedBook){
 //   const filteredkidsBooks = kidsBooks.filter(book => book.id !== deletedBook.id ? book : null)
 //   setAllBooks(filteredkidsBooks)
@@ -75,10 +77,11 @@ function removeReview(deletedReview){
                                                        onBookAdded={handleBookAdded}
                                             />}   
             />
-            <Route path="/me/children" element={<ParentPage />} />
-            <Route path="/login" element= {<LoginForm/>} />
+            <Route path="/me/children" element={ <ParentPage /> } />
+            <Route path="/me/children/:id" element={<ChildDetails /> } />
+            <Route path="/login" element={ <LoginForm/> } />
             <Route path="/logout" />
-            <Route path= "/signup" element= {<SignUpForm/>} />
+            <Route path= "/signup" element={ <SignUpForm/> } />
             <Route path="*" element={ <Home/> } /> 
           
           </Routes>

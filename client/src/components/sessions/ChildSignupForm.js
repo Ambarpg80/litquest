@@ -2,8 +2,8 @@ import React, {useState, useContext} from 'react'
 import { userContext } from '../context/UserProvider'
 
 
-function ChildSignupForm({ onShowSignUp}){
-    const {currentUser, addChild} = useContext(userContext)
+function ChildSignupForm({ onShowSignUp, onAddChild}){
+    const {currentUser} = useContext(userContext)
     const [signUpError, setsignUpError] = useState([])
     const [profileableName, setProfileableName]= useState("")
     const [newUser, setNewUser] = useState({
@@ -38,7 +38,7 @@ function ChildSignupForm({ onShowSignUp}){
        })
         .then(res => {
             if(res.ok){
-                (res.json()).then(user => {addChild(user)
+                (res.json()).then(user => {onAddChild(user)
                                           onShowSignUp()}) 
             }else{
                 res.json().then(err => setsignUpError(err.errors.map(error => <ul key={error}><li> {error} </li></ul> ) ) )

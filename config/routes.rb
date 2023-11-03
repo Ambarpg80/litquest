@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   # delete "me/reviews", to: "review#destroy_all"
 
-  get "me/children", to: "parents#my_children"
-  post "me/children", to: "children#create"
+  get "/me/children", to: "children#show_children"
+  post "/me/children", to: "children#create"
   get "me/children/:id", to: "children#show"
   
   get "/me", to: "user_profiles#show"  #sign user in automatically on re-render

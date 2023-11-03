@@ -7,8 +7,20 @@ class ChildrenController < ApplicationController
     end
 
     def show
-        child = Child.find(params[:id])
+        byebug
+    #     user = current_user
+    #     user&.parent?
+    #    child= user.profileable.children.find_by(id: params[:id])
+        child = Child.find(id: params[:id])
         render json: child, status: :ok
+    end
+
+    def show_children
+        # byebug
+        user = current_user
+        user&.parent?
+       children= user.profileable.children
+       render json: children, status: :ok
     end
 
     def create 

@@ -15,11 +15,45 @@ span.home-font{
   top: 45vh;
   text-align: center;
 }
-.whole-child{
-  display: block;
-  border: 1px solid rgb(65, 78, 67);
+.card{
+  display: inline-block;
+  border: 1px solid rgb(134, 149, 136);
   margin: 30px;
+  width: 20%;
+  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.415);
+  transition: 0.3s;
+  border-radius: 5px;
+  
 }
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.39);
+}
+
+/* Add some padding inside the card container */
+div.container {
+  padding: 2px 16px;
+  background-color: rgba(24, 225, 51, 0.355);
+  height: 170px;
+  margin-top: 110px;
+  border-radius: 0 0 5px;
+  
+}
+
+
+.avatar{
+  width: 125px;
+  height: 125px;
+  border-radius: 60px ;
+  position: relative;
+  margin-left: 20%;
+  margin-top: 15px;
+  text-decoration: none; 
+}
+/* 5px 0 0 */
+
 .book{
   display: inline-flex;
   border: 1px solid rgb(65, 78, 67);
@@ -34,17 +68,7 @@ table, th, td {
   border: 1px solid;
 }
 
-.avatar{
-  src: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png";
-  display: flex;
-  width: 100px;
-  height: 100px;
-  /* border-radius: 40px; */
-  border: 1px solid rgb(65, 78, 67);
-  position: relative;
-  margin: 20px;
-  text-decoration: none;
-}
+
 
 .App-logo {
   height: 40vmin;

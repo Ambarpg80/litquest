@@ -9,24 +9,23 @@ function ParentPage(){ //parents will only be able to read child content
     
 
 
-     useEffect(()=>{
-            fetch(`/me/children`)
-            .then(res => res.json())
-            .then(children => setKids(children))
-            
-        },[]) 
+    useEffect(()=>{
+      fetch(`/me/children`)
+        .then(res => res.json())
+        .then(children => setKids(children))
+    },[]) 
 
-        function addChild(newChild){
-            setKids([...kids, newChild])  
-          }
+    function addChild(newChild){
+      setKids([...kids, newChild])  
+    }
           
-          function handleDeletedChild(deletedChild){
-            const filteredChildren = kids.filter(child => child.id !== deletedChild.id)
-            setKids(filteredChildren)
-          } 
+    function handleDeletedChild(deletedChild){
+      const filteredChildren = kids.filter(child => child.id !== deletedChild.id)
+      setKids(filteredChildren)
+    } 
 
-     function handleChildForm(){
-        setShowForm(!showForm) 
+    function handleChildForm(){
+      setShowForm(!showForm) 
     }
     
 

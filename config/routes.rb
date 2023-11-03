@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #  root "books#index"
   resources :books, only: [:index, :show,:create, :update, :destroy]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
-  resources :children, only: [:index, :show, :create, :update, :destroy]
+  resources :children, only: [:index, :create, :update, :destroy]
   resources :parents, only: [:index, :show, :create, :update, :destroy] 
   resources :user_profiles, only: [:index, :update, :destroy]
 

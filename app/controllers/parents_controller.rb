@@ -9,7 +9,7 @@ class ParentsController < ApplicationController
 
     def show
         parent = Parent.find_by(id: params[:id])
-        render json: parent, include: :children, status: :ok
+        render json: parent, status: :ok
     end
 
     def create 

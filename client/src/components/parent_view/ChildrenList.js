@@ -1,14 +1,11 @@
-import React, { useState} from "react";
-import ChildDetails from "./ChildDetails"
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 
 function ChildrenList({child, onRemoveChild}){
-  const [childBooks, setChildBooks] = useState([])
   const navigate = useNavigate("");
   const btnStyle= {marginTop: "3px", marginBottom: "5px", marginRight:"10px" }
- // const {id, name,  age, image_url, books } = child 
-
+ 
 
  function removeChild(){
    fetch(`/children/${child.id}`,{
@@ -20,7 +17,6 @@ function ChildrenList({child, onRemoveChild}){
 
  function handleChild(){
    navigate(`/me/children/${child.id}`)
-   return (<ChildDetails child={child} />)
  }
 
  return(

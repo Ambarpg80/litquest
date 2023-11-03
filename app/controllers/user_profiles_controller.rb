@@ -7,8 +7,8 @@ class UserProfilesController < ApplicationController
     end
 
     def show
-        user_profile = current_user.profileable
-        render json: user_profile, status: :ok
+        user = current_user.profileable
+        render json: user, status: :ok
     end
 
     def create

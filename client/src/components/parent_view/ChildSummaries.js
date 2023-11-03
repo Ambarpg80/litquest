@@ -2,7 +2,6 @@ import React from "react"
 import ChildSummaryDetails from "./ChildSummaryDetail";
 
 function ChildSummaries({ book }){
-   console.log(book)
 
     return(
         <div>

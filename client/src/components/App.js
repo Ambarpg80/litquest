@@ -11,9 +11,8 @@ import ParentPage from './parent_view/ParentPage';
 import ChildDetails from './parent_view/ChildDetails';
 
 function App() { 
-  const {kidsBooks, setKidsBooks} = useContext(userContext);
+  const {kidsBooks, setKidsBooks, kidsBookChange} = useContext(userContext);
   const [allBooks, setAllBooks] = useState([]);
-
   
 useEffect(() => {
   fetch(`/books`)
@@ -22,26 +21,22 @@ useEffect(() => {
 }, []);
 
 function handleBookAdded(addedBook){
-  const addedBookList = [...allBooks, addedBook]
-setAllBooks(addedBookList)
+setAllBooks([...allBooks, addedBook])
 setKidsBooks([...kidsBooks, addedBook])
 }
 
-// console.log(kidsBooks)
-
-// function handleBookRemoval(deletedBook){
-//   const filteredkidsBooks = kidsBooks.filter(book => book.id !== deletedBook.id ? book : null)
-//   setAllBooks(filteredkidsBooks)
-// }
+function handleBookRemoval(deletedBook){
+  const filteredkidsBooks = kidsBooks.filter(book => book.id !== deletedBook.id ? book : null)
+  setKidsBooks(filteredkidsBooks)
+}
 
 function addReview(addedReview){
-  const oneBook = allBooks.find(book => book.id === addedReview.book_id) //find single book to add review
+  const oneBook = kidsBooks.find(book => book.id === addedReview.book_id) //find single book to add review
   const newReviewArray = [...oneBook.reviews, addedReview] //copy book.reviews array and add new review
   const bookWithNewRev= {...oneBook, reviews: newReviewArray}//add new reviews array to single book object
   const newBooksList = allBooks.map(bk => bk.id === bookWithNewRev.id ? bookWithNewRev :  bk)//map through books data and return either a book or the book with added review that matches the 
-  const newKidsList = kidsBooks.map(bk => bk.id === bookWithNewRev.id ? bookWithNewRev :  bk)
   setAllBooks(newBooksList)
-  setKidsBooks(newKidsList)
+  kidsBookChange(bookWithNewRev)
 }
 
 function updateReview(updatedReview){
@@ -49,9 +44,8 @@ function updateReview(updatedReview){
   const updatedReviews = oneBook.reviews.map(review => review.id === updatedReview.id ? updatedReview : review)
   const updatedBook = {...oneBook, reviews: updatedReviews}
   const updatedArray = allBooks.map(bk => bk.id === updatedBook.id ? updatedBook : bk)
-  const updatedKidsList = kidsBooks.map(bk => bk.id === updatedBook.id ? updatedBook :  bk)
   setAllBooks(updatedArray)
-  setKidsBooks(updatedKidsList)
+  kidsBookChange(updatedBook)
 }
 
 function removeReview(deletedReview){
@@ -59,9 +53,11 @@ function removeReview(deletedReview){
   const filteredReviews = oneBook.reviews.filter(r => r.id !== deletedReview.id ? r : null)
   const filteredBook = {...oneBook, reviews: filteredReviews}
   const newFilteredList = allBooks.map(bk=> bk.id === filteredBook.id ? filteredBook : bk)
-  const filteredKidsList = kidsBooks.map(bk => bk.id === filteredBook.id ? filteredBook :  bk)
   setAllBooks(newFilteredList)
-  setKidsBooks(filteredKidsList)
+  kidsBookChange(filteredBook)
+  if (filteredBook.reviews.length === 0){ 
+    handleBookRemoval(filteredBook) 
+  }
 }
 
   return (

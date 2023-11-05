@@ -12,9 +12,8 @@ class ChildrenController < ApplicationController
     end
 
     def show_children
-        # byebug
-        user = current_user
-        user&.parent?
+       user = current_user
+       user&.parent?
        children= user.profileable.children
        render json: children, status: :ok
     end

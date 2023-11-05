@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   #  root "books#index"
   resources :books, only: [:index, :show,:create, :update, :destroy]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
-  resources :children, only: [:index, :create, :update, :destroy]
+  resources :children, only: [:index, :update, :destroy]
   resources :parents, only: [:index, :show, :create, :update, :destroy] 
   resources :user_profiles, only: [:index, :update, :destroy]
 
-  # delete "me/reviews", to: "review#destroy_all"
+  # get "my_books", to: "books#my_books"
 
   get "/me/children", to: "children#show_children"
   post "/me/children", to: "children#create"

@@ -82,7 +82,7 @@ function NewBookForm({ onBookAdded, handleBookForm}){
                             value={newBookInfo.thumbnail_url}
                             onChange={handleChange}></input>
                 </label><br/>
-                <label> Book Preview:
+                <label> About the Book:
                     <textarea type="text"
                               id="preview"
                               value={newBookInfo.preview}

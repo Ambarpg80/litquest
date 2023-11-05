@@ -6,6 +6,7 @@ class BooksController < ApplicationController
         render json: books, status: :ok
     end
 
+
     def show
         book = Book.find(params[:id])
         render json: book, status: :ok
@@ -38,8 +39,4 @@ class BooksController < ApplicationController
         params.permit(:title, :author, :publisher, :genre, :thumbnail_url, :preview)
     end
 
-   
-
 end
-# title author publisher genre thumbnail_url preview
-# title: author: publisher: genre: thumbnail_url: preview:

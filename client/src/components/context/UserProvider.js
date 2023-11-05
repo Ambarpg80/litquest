@@ -38,10 +38,10 @@ function UserProvider({children}){
 
    
 
-    // function kidsBookChange(book){
-    //   const bookChange = kidsBooks.map(bk=> bk.id === book.id ? book : bk )
-    //   setKidsBooks(bookChange)
-    // }
+    function kidsBookChange(book){
+      const bookChange = kidsBooks.map(bk=> bk.id === book.id ? book : bk )
+      setKidsBooks(bookChange)
+    }
     
 
     return(
@@ -51,7 +51,7 @@ function UserProvider({children}){
                                       login, 
                                       logout, 
                                       signup,
-                                      // kidsBookChange,
+                                      kidsBookChange,
                                       }}> {children} 
         </userContext.Provider>
     )

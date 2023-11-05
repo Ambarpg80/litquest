@@ -1,29 +1,30 @@
 import React, {useState, useContext} from "react";
 import { userContext } from "../context/UserProvider";
 
+//FORM AT TOP OF PAGE
 function NewSummaryForm({ allBooks, handleShowSummaries, onAddReview}){
     const [newSummaryError, setNewSummaryError] = useState("")
     const {currentUser} = useContext(userContext); 
     const [newReview, setNewReview] = useState({
            child_id: currentUser.id, 
-           book_id: 0,
+           book_id: 1,
            summary: "", 
-           rating: 0,
+           rating: "",
       });
       
-       
+      
        function handleChange(e){
-        // console.log(e.target.id, e.target.value)
+        
         setNewReview({...newReview , 
                         [e.target.id]: e.target.value,});
        }
-        
+
        const reviewInput ={child_id: newReview.child_id, 
                          book_id: newReview.book_id ,
                          summary: newReview.summary ,
                          rating: newReview.rating ,
                          }
-    
+
        function reviewSubmission(e){
         e.preventDefault()
         fetch(`/reviews`,{
@@ -45,10 +46,12 @@ function NewSummaryForm({ allBooks, handleShowSummaries, onAddReview}){
         
         <div className='form-container'>
           <form onSubmit={reviewSubmission}>
+          <p style={{textAlign: "center"}}> If your book is not part of our list, Click on <i>Add a New Book </i>to our list. </p>
            <label> Select A Book : 
-            <select style={{marginLeft:"10px"}} onChange={handleChange} id="book_id" value={newReview.book_id}>
+            <select style={{marginLeft:"10px"}} onChange={handleChange} id="book_id"  value={newReview.book_id}>
                 {allBooks.map(sumBk=> 
-                    <option key={sumBk.id} 
+                    <option onChange={handleChange}
+                            key={sumBk.id} 
                             id="book_id"
                             value={sumBk.id}> {sumBk.title}, by {sumBk.author}
                     </option>)}
@@ -63,6 +66,7 @@ function NewSummaryForm({ allBooks, handleShowSummaries, onAddReview}){
                 <label> Rating:
                     <input type="text"
                             id="rating"
+                            placeholder="From 1 to 5"
                             value={newReview.rating}
                             onChange={handleChange}></input>
                 </label><br/> 

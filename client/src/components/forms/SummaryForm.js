@@ -1,14 +1,15 @@
 import React, {useState, useContext} from "react";
 import { userContext } from "../context/UserProvider";
 
-function SummaryForm({book, onAddReview, handleShowSummaries}){
+//FORM UNDER EACH BOOK
+function SummaryForm({book, onAddReview}){
     const [summaryError, setSummaryError] = useState("")
     const {currentUser} = useContext(userContext); 
     const [newReview, setNewReview] = useState({
            child_id: currentUser.id, 
            book_id: book.id,
            summary: "", 
-           rating: 0,
+           rating: "",
       });
       
        
@@ -32,11 +33,13 @@ function SummaryForm({book, onAddReview, handleShowSummaries}){
         })
         .then(res => {
             if(res.ok){
-            res.json().then(newReview =>  { onAddReview(newReview)   
-                                            handleShowSummaries() })
+            res.json().then(newAddedReview =>  { onAddReview(newAddedReview)   
+                                                 setNewReview({summary: "" ,
+                                                               rating: "" }) 
+                                                })
             }else{
-            res.json().then(error => setSummaryError( error.errors.map(err => <li key={err}>{err}</li>) ) )
-            }
+            res.json().then(error => setSummaryError( error.errors.map(err => <li key={err}>{err}</li>)) )
+          }  
         })                        
         }
     return(
@@ -53,6 +56,7 @@ function SummaryForm({book, onAddReview, handleShowSummaries}){
                 <label> Rating:
                     <input type="text"
                             id="rating"
+                            placeholder="From 1 to 5"
                             value={newReview.rating}
                             onChange={handleChange}></input>
                 </label><br/> 

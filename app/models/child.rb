@@ -10,14 +10,6 @@ class Child < ApplicationRecord
 
   validates :name, presence: true
 
-  # def find_book
-  #   # byebug
-  #  books= self.books
-  #  book_n_reviews= books.map do |book| 
-  #  found_reviews= Review.all.filter{|rev| rev.book_id == book.id}
-  #  book.reviews << found_reviews
-  #  end
-  #  book_n_reviews
-  # end
+ 
 
 end

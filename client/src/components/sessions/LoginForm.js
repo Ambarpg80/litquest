@@ -17,8 +17,8 @@ function LoginForm({onShowLogin}){
         })
         .then(res => {
             if (res.ok){
-            res.json().then( user =>  {login(user)
-                onShowLogin()} )           
+            res.json().then(user =>{login(user)
+                                    onShowLogin()} )           
            } else {
            res.json().then( err => setLoginError(err.error) )
            }

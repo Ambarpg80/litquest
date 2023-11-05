@@ -36,7 +36,7 @@ function NavBar(){
         fetch ("/logout",{
          method: "DELETE"
         })
-        .then(() => logout())      
+        .then(()=>logout())      
         }
     
     

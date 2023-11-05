@@ -35,7 +35,7 @@ function BookList({allBooks, onBookAdded,onAddReview, onUpdateReview, onRemoveRe
            
           
      
-       {kidsBooks.map(book => 
+       {kidsBooks?.map(book => 
           <div key={book.id}> 
             <BookDetails onAddReview={onAddReview} 
                         onUpdateReview={onUpdateReview}

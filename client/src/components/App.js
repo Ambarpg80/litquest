@@ -31,7 +31,7 @@ function handleBookRemoval(deletedBook){
 }
 
 function addReview(addedReview){
-  const oneBook = kidsBooks.find(book => book.id === addedReview.book_id) //find single book to add review
+  const oneBook = allBooks.find(book => book.id === addedReview.book_id) //find single book to add review
   const newReviewArray = [...oneBook.reviews, addedReview] //copy book.reviews array and add new review
   const bookWithNewRev= {...oneBook, reviews: newReviewArray}//add new reviews array to single book object
   const newBooksList = allBooks.map(bk => bk.id === bookWithNewRev.id ? bookWithNewRev :  bk)//map through books data and return either a book or the book with added review that matches the 

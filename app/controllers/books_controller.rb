@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     def create 
         child= current_user.profileable
         new_book = Book.create(book_params)
-        new_book.reviews.create(book_id: new_book.id, child_id: child.id, summary: params[:summary])
+        new_book.reviews.create(book_id: new_book.id, child_id: child.id, summary: params[:summary], rating: params[:rating] )
         new_book.valid?
         render json: new_book, status: :created
     end

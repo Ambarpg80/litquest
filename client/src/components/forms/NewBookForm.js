@@ -6,6 +6,7 @@ function NewBookForm({ onBookAdded, handleBookForm}){
     // const {handleBookAdded} = useContext(userContext)
     const [bookError, setBookError] = useState("")
     const [newBookSummary, setNewBookSummary]= useState("")
+    const [newBookRating, setNewBookRating]= useState("")
     const [newBookInfo, setNewBookInfo] = useState({
         title: "",
         author: "",
@@ -28,6 +29,7 @@ function NewBookForm({ onBookAdded, handleBookForm}){
                          thumbnail_url: newBookInfo.thumbnail_url,
                          preview: newBookInfo.preview ,
                          summary: newBookSummary,
+                         rating: newBookRating,
                          }
     
        function bookSubmission(e){
@@ -95,6 +97,12 @@ function NewBookForm({ onBookAdded, handleBookForm}){
                               value={newBookSummary}
                               onChange={(e)=>setNewBookSummary(e.target.value)}>
                     </textarea>
+                </label><br/>
+                <label> Rating:
+                    <input type="text"
+                            id="rating"
+                            value={newBookRating}
+                            onChange={(e)=>setNewBookRating(e.target.value)}></input>
                 </label><br/>
             <button type="submit"> Submit Book </button>
             </form>

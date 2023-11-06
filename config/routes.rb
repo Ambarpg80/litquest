@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   resources :parents, only: [:index, :show, :create, :update, :destroy] 
   resources :user_profiles, only: [:index, :update, :destroy]
 
-  # get "my_books", to: "books#my_books"
-
   get "/me/children", to: "children#show_children"
   post "/me/children", to: "children#create"
   get "me/children/:id", to: "children#show"

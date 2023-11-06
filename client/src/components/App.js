@@ -58,14 +58,16 @@ function updateReview(updatedReview){
 }
 
 function removeReview(deletedReview){
-  const oneBook = allBooks.find(book => book.id === deletedReview.book_id) 
+  const oneBook = kidsBooks.find(book => book.id === deletedReview.book_id) 
   const filteredReviews = oneBook.reviews.filter(r => r.id !== deletedReview.id ? r : null)
   const filteredBook = {...oneBook, reviews: filteredReviews}
   const newFilteredList = allBooks.map(bk=> bk.id === filteredBook.id ? filteredBook : bk)
-  setAllBooks(newFilteredList)
-  kidsBookChange(filteredBook)
-  if ( filteredBook.reviews.map(rev=> rev.child_id !== currentUser.id) ){ 
-    handleBookRemoval(filteredBook) 
+  const filteredBookReviews= filteredBook.reviews.map(r=> r.child_id)
+   if (filteredBookReviews.includes(currentUser.id)){
+    setAllBooks(newFilteredList)
+    kidsBookChange(filteredBook) 
+  }else{
+     handleBookRemoval(filteredBook)
   }
 }
 

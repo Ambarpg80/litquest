@@ -2,7 +2,7 @@ import React, {useState, useContext} from "react";
 import { userContext } from "../context/UserProvider";
 
 //FORM AT TOP OF PAGE
-function NewSummaryForm({ allBooks, handleShowSummaries, onAddReview}){
+function NewSummaryForm({ allBooks, handleShowSummaries, addNewReview}){
     const [newSummaryError, setNewSummaryError] = useState("")
     const {currentUser} = useContext(userContext); 
     const [newReview, setNewReview] = useState({
@@ -34,7 +34,7 @@ function NewSummaryForm({ allBooks, handleShowSummaries, onAddReview}){
         })
         .then(res => {
             if(res.ok){
-            res.json().then(newReview =>  { onAddReview(newReview)   
+            res.json().then(newReview =>  { addNewReview(newReview)   
                                             handleShowSummaries() })
             }else{
             res.json().then(error => setNewSummaryError( error.errors.map(err => <li key={err}>{err}</li>) ) )

@@ -30,14 +30,23 @@ function handleBookRemoval(deletedBook){
   setKidsBooks(filteredkidsBooks)
 }
 
-function addReview(addedReview){
+function addReviewtoBook(addedReview){
   const oneBook = allBooks.find(book => book.id === addedReview.book_id) //find single book to add review
   const newReviewArray = [...oneBook.reviews, addedReview] //copy book.reviews array and add new review
   const bookWithNewRev= {...oneBook, reviews: newReviewArray}//add new reviews array to single book object
   const newBooksList = allBooks.map(bk => bk.id === bookWithNewRev.id ? bookWithNewRev :  bk)//map through books data and return either a book or the book with added review that matches the 
   setAllBooks(newBooksList)
   kidsBookChange(bookWithNewRev)
-}
+  }
+  
+  function addNewReview(addedReview){
+    const oneBook = allBooks.find(book => book.id === addedReview.book_id) //find single book to add review
+    const newReviewArray = [...oneBook.reviews, addedReview] //copy book.reviews array and add new review
+    const bookWithNewRev= {...oneBook, reviews: newReviewArray}//add new reviews array to single book object
+    const newList = allBooks.map(bk => bk.id === bookWithNewRev.id ? bookWithNewRev :  bk)
+    setAllBooks(newList)
+    setKidsBooks([...kidsBooks,bookWithNewRev])
+  }
 
 function updateReview(updatedReview){
   const oneBook = allBooks.find(book => book.id === updatedReview.book_id)
@@ -65,9 +74,9 @@ function removeReview(deletedReview){
       <nav className="App-header"> <NavBar/> </nav>
         <Routes>
             <Route exact path="/" element={ <Home/> } /> 
-            <Route path="/my_books" element={<BookList 
-                                                       allBooks={allBooks} 
-                                                       onAddReview={addReview} 
+            <Route path="/my_books" element={<BookList allBooks={allBooks} 
+                                                       addNewReview={addNewReview}
+                                                       onAddReview={addReviewtoBook} 
                                                        onUpdateReview={updateReview}
                                                        onRemoveReview={removeReview}
                                                        onBookAdded={handleBookAdded}

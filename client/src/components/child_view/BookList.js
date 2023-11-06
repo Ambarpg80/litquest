@@ -4,7 +4,7 @@ import NewBookForm from "../forms/NewBookForm.js";
 import { userContext } from "../context/UserProvider";
 import NewSummaryForm from "../forms/NewSummaryForm";
 
-function BookList({allBooks, onBookAdded,onAddReview, onUpdateReview, onRemoveReview}){
+function BookList({allBooks, onBookAdded,onAddReview, onUpdateReview, onRemoveReview, addNewReview}){
     const {kidsBooks} = useContext(userContext);
     const [showBookForm, setShowBookForm] = useState(false);
     const [showSummaryForm, setShowSummaryForm]= useState(false);
@@ -27,7 +27,7 @@ function BookList({allBooks, onBookAdded,onAddReview, onUpdateReview, onRemoveRe
           <>
             <div> 
               <NewSummaryForm allBooks={allBooks} 
-                              onAddReview={onAddReview} 
+                              addNewReview={addNewReview} 
                               handleShowSummaries={handleSummaryForm} /> 
             </div>
           </>

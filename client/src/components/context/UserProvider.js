@@ -21,12 +21,14 @@ function UserProvider({children}){
    
     function login(user){
         setCurrentUser(user)
+        setKidsBooks(kidsBooks)
         setIsLoggedIn(true)
         navigate("/")
     }
 
     function logout(){
         setCurrentUser({})
+        setKidsBooks([])
         setIsLoggedIn(false)
         navigate("/")
     }

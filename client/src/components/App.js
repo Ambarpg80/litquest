@@ -11,7 +11,7 @@ import ParentPage from './parent_view/ParentPage';
 import ChildDetails from './parent_view/ChildDetails';
 
 function App() { 
-  const {kidsBooks, setKidsBooks, kidsBookChange} = useContext(userContext);
+  const {currentUser, kidsBooks, setKidsBooks, kidsBookChange} = useContext(userContext);
   const [allBooks, setAllBooks] = useState([]);
   
 useEffect(() => {
@@ -64,7 +64,7 @@ function removeReview(deletedReview){
   const newFilteredList = allBooks.map(bk=> bk.id === filteredBook.id ? filteredBook : bk)
   setAllBooks(newFilteredList)
   kidsBookChange(filteredBook)
-  if (filteredBook.reviews.length === 0){ 
+  if ( filteredBook.reviews.map(rev=> rev.child_id !== currentUser.id) ){ 
     handleBookRemoval(filteredBook) 
   }
 }

@@ -53,37 +53,37 @@ function SignUpForm({ onShowSignUp}){
                 <input onChange={(e)=> setProfileableName(e.target.value) } 
                         type="text" 
                         id="name" 
-                        value={profileableName}></input>
+                       required value={profileableName}></input>
             </label> <br/>
             <label >Email:
                 <input onChange={inputChange} 
                        type="text" 
                        id="email" 
-                       value={newUser.email}></input>
+                       required value={newUser.email}></input>
             </label> <br/>
             <label >Age:
                 <input onChange={inputChange} 
                        type="text" 
                        id="age" 
-                       value={newUser.age}></input>
+                       required value={newUser.age}></input>
             </label> <br/>
             <label >Username:
                 <input onChange={inputChange} 
                        type="text" 
                        id="username" 
-                       value={newUser.username}></input>
+                       required value={newUser.username}></input>
             </label> <br/>
             <label >Password:
                 <input onChange={inputChange} 
                        type="password" 
                        id="password" 
-                       value={newUser.password}></input>
+                       required value={newUser.password}></input>
             </label> <br/>
             <label >Confirm Password:
                 <input onChange={inputChange}
                        type="password" 
                        id="password_confirmation" 
-                       value={newUser.password_confirmation}></input>
+                       required value={newUser.password_confirmation}></input>
             </label> <br/>
             <button>Sign Up</button>
         </form>

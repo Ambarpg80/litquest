@@ -64,7 +64,7 @@ function NewSummaryForm({ allBooks, handleShowSummaries, addNewReview}){
                             onChange={handleChange}></textarea>
                 </label><br/>
                 <label> Rating:
-                    <input type="text"
+                    <input type="number"
                             id="rating"
                             placeholder="From 1 to 5"
                             value={newReview.rating}

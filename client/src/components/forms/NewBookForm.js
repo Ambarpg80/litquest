@@ -99,7 +99,7 @@ function NewBookForm({ onBookAdded, handleBookForm}){
                     </textarea>
                 </label><br/>
                 <label> Rating:
-                    <input type="text"
+                    <input type="number"
                             id="rating"
                             value={newBookRating}
                             onChange={(e)=>setNewBookRating(e.target.value)}></input>

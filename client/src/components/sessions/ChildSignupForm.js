@@ -60,14 +60,14 @@ function ChildSignupForm({ onShowSignUp, onAddChild}){
             </label> <br/>
             <label >Email:
                 <input onChange={inputChange} 
-                       type="text" 
+                       type="email" 
                        id="email" 
                        required  value={newUser.email}>
                 </input>
             </label> <br/>
             <label >Age:
                 <input onChange={inputChange} 
-                       type="text" 
+                       type="number" 
                         id="age" 
                        required value={newUser.age}>
                 </input>

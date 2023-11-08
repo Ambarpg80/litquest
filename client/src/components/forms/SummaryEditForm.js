@@ -51,7 +51,7 @@ function SummaryEditForm({book, review, showEditForm, onUpdateReview }){
                             onChange={handleChange}></textarea>
                 </label><br/>
                 <label> Rating:
-                    <input type="text"
+                    <input type="number"
                             id="rating"
                             value={editReview.rating}
                             onChange={handleChange}></input>

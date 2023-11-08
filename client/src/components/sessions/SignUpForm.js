@@ -63,7 +63,7 @@ function SignUpForm({ onShowSignUp}){
             </label> <br/>
             <label >Age:
                 <input onChange={inputChange} 
-                       type="text" 
+                       type="number" 
                        id="age" 
                        required value={newUser.age}></input>
             </label> <br/>

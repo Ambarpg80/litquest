@@ -36,7 +36,7 @@ function SummaryEditForm({book, review, showEditForm, onUpdateReview }){
             .then(editBook =>  { onUpdateReview(editBook)   
                                  showEditForm()})
             }else{
-            res.json().then(error => setSumEditError( error.errors.map(err => <li key={err}>{err}</li>) ) )
+            res.json().then(error => setSumEditError( error.errors.map(err => <ul key={err}>{err.map(er=><li key={er}>{er}</li>)}</ul>) ) )
             }
         })                        
         }

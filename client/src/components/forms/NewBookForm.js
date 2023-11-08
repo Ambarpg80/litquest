@@ -1,9 +1,7 @@
 import React, { useState} from "react"; 
-// import { userContext } from "../context/UserProvider";useContext,
 
 
 function NewBookForm({ onBookAdded, handleBookForm}){
-    // const {handleBookAdded} = useContext(userContext)
     const [bookError, setBookError] = useState("")
     const [newBookSummary, setNewBookSummary]= useState("")
     const [newBookRating, setNewBookRating]= useState("")
@@ -44,7 +42,7 @@ function NewBookForm({ onBookAdded, handleBookForm}){
             res.json().then(newBook =>  { onBookAdded(newBook)
                                           handleBookForm() })
             }else{
-            res.json().then(error => setBookError( error.errors.map(err => <li key={err}>{err}</li>) ) )
+            res.json().then(error => setBookError(error.errors.map(err => <ul key={err}>{err.map(er=><li key={er}>{er}</li>)}</ul>) ) )
             }
         })                        
         }

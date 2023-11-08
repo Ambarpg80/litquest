@@ -41,7 +41,7 @@ function ChildSignupForm({ onShowSignUp, onAddChild}){
                 (res.json()).then(user => {onAddChild(user)
                                           onShowSignUp()}) 
             }else{
-                res.json().then(err => setChildSignUpError(err.errors.map(error => <ul key={error}><li> {error} </li></ul> ) ) )
+                res.json().then(error => setChildSignUpError(error.errors.map(err => <ul key={err}>{err.map(er=><li key={er}>{er}</li>)}</ul>) ) )
             }
             })
         }

@@ -37,7 +37,7 @@ function NewSummaryForm({ allBooks, handleShowSummaries, addNewReview}){
             res.json().then(newReview =>  { addNewReview(newReview)   
                                             handleShowSummaries() })
             }else{
-            res.json().then(error => setNewSummaryError( error.errors.map(err => <li key={err}>{err}</li>) ) )
+            res.json().then(error => setNewSummaryError( error.errors.map(err => <ul key={err}>{err.map(er=><li key={er}>{er}</li>)}</ul>) ) )
             }
         })                        
         }

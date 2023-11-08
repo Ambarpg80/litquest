@@ -40,7 +40,7 @@ function SignUpForm({ onShowSignUp}){
                 (res.json()).then( user => {signup(user)
                                           onShowSignUp()}) 
             }else{
-                res.json().then(err=> setSignUpError(err.errors.map(error => <li key={error}>{error}</li>)))
+                res.json().then(error=> setSignUpError(error.errors.map(err => <ul key={err}>{err.map(er=><li key={er}>{er}</li>)}</ul>)))
             }
             })
         }
@@ -51,8 +51,8 @@ function SignUpForm({ onShowSignUp}){
         <form onSubmit={handleSignup}>
             <label > Name:
                 <input onChange={(e)=> setProfileableName(e.target.value) } 
-                        type="text" 
-                        id="name" 
+                       type="text" 
+                       id="name" 
                        required value={profileableName}></input>
             </label> <br/>
             <label >Email:

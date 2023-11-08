@@ -3,7 +3,7 @@ import {userContext} from '../context/UserProvider'
 
 function SignUpForm({ onShowSignUp}){
     const {signup} = useContext(userContext);
-    const [signUpError, setsignUpError] = useState([])
+    const [signUpError, setSignUpError] = useState([])
     const [profileableName, setProfileableName]= useState("")
     const [newUser, setNewUser] = useState({
             parent_id: null ,
@@ -40,7 +40,7 @@ function SignUpForm({ onShowSignUp}){
                 (res.json()).then( user => {signup(user)
                                           onShowSignUp()}) 
             }else{
-                res.json().then(err=> setsignUpError(err.errors.map(error => <li key={error}>{error}</li>)))
+                res.json().then(err=> setSignUpError(err.errors.map(error => <li key={error}>{error}</li>)))
             }
             })
         }

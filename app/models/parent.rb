@@ -4,7 +4,7 @@ class Parent < ApplicationRecord
     has_one :user_profile, as: :profileable
     has_many :children
     
-    
- 
+   validates :name, presence: true
+   
     
 end

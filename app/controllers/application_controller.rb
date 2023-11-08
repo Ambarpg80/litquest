@@ -25,7 +25,6 @@ class ApplicationController < ActionController::API
     end
     
     def render_unprocessable_entity(exception)
-        # user = current_user
         render json: {errors: [exception.record.errors.full_messages]}, status: :unprocessable_entity
     end
 

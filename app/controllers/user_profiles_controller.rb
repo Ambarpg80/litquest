@@ -14,7 +14,7 @@ class UserProfilesController < ApplicationController
     def create
         new_profile = UserProfile.new(user_params)
         new_profile.profileable = parent_or_child(params)
-        new_profile.save
+        new_profile.save!
         if new_profile.valid?
             session[:user_id] = new_profile.id
             render json: new_profile.profileable, status: :created 
@@ -26,7 +26,7 @@ class UserProfilesController < ApplicationController
 
     def update      
         profile = current_user
-        profile.update(user_params)
+        profile.update!(user_params)
         if profile
         render json: profile, status: :accepted
         end

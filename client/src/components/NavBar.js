@@ -56,8 +56,8 @@ function NavBar(){
         
         </nav>
         <header > 
-            { showLogin ? <LoginForm onShowLogin={handleshowLogin}/> : null}
-            { showSignUp ? <SignUpForm onShowSignUp={handleshowSignUp}/> : null}
+            { showLogin && !isLoggedIn ? <LoginForm onShowLogin={handleshowLogin}/> : null}
+            { showSignUp && !isLoggedIn ? <SignUpForm onShowSignUp={handleshowSignUp}/> : null}
         </header>
     </div> 
     )

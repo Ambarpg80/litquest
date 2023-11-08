@@ -1,15 +1,15 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext} from "react";
 import ChildSignupForm from "../sessions/ChildSignupForm";
 import ChildrenList from "./ChildrenList";
+import { userContext } from "../context/UserProvider";
 
 
 function ParentPage(){ //parents will only be able to read child content
+    const {currentUser} = useContext(userContext)
     const [showForm, setShowForm] = useState(false)
     const [kids, setKids] = useState([]);
     
-
-
-    useEffect(()=>{
+useEffect(()=>{
       fetch(`/me/children`)
         .then(res => res.json())
         .then(children => setKids(children))
@@ -28,7 +28,8 @@ function ParentPage(){ //parents will only be able to read child content
       setShowForm(!showForm) 
     }
     
-
+  {console.log(kids)}
+if(currentUser)
   return(
     <div >
         <p> Click on the button to add your child below </p>
@@ -37,6 +38,7 @@ function ParentPage(){ //parents will only be able to read child content
         <div>
             <h3>Children</h3>
             <div> 
+              
               {kids.map(child=> 
                 <div key={child.id}>  
                   <ChildrenList child={child} onRemoveChild={handleDeletedChild} />

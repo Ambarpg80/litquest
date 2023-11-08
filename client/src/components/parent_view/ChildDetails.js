@@ -19,7 +19,7 @@ function ChildDetails(){
        
         {childUser.books?.map(book =>  
           <div key={book.id} className="book">  
-             <ChildSummaries  book={book} reviews={book.reviews} />
+             <ChildSummaries  child={childUser} book={book} />
           </div> )}
         </div>
       </div>

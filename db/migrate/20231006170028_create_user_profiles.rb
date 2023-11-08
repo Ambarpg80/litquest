@@ -6,7 +6,7 @@ class CreateUserProfiles < ActiveRecord::Migration[7.0]
       t.string :username
       t.string :password_digest
       t.string :profileable_type
-      t.string :profileable_id
+      t.integer :profileable_id
 
       t.timestamps
     end

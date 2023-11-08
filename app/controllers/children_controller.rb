@@ -12,6 +12,7 @@ class ChildrenController < ApplicationController
     end
 
     def show_children
+        # byebug
        user = current_user
        user&.parent?
        children= user.profileable.children
@@ -34,7 +35,7 @@ class ChildrenController < ApplicationController
 
     def update 
         child = Child.find(params[:id])
-        child.update(child_params)
+        child.update!(child_params)
         render json: child, status: :accepted
     end
 

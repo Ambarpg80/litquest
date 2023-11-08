@@ -60,6 +60,7 @@ lui = UserProfile.create!(email: "littlebear@example.com" ,
 
 Review.create!(child_id: lui.profileable.id, 
               book_id: 1,
+              pages_read:"",
               summary: "June is a girl who likes to read a lot of books.", 
               rating: 4)
 

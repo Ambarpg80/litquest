@@ -44,9 +44,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_170257) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "summary"
+    t.string "pages_read"
     t.integer "rating"
     t.bigint "child_id", null: false
-    t.bigint "book_id"
+    t.bigint "book_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
@@ -59,7 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_170257) do
     t.string "username"
     t.string "password_digest"
     t.string "profileable_type"
-    t.string "profileable_id"
+    t.integer "profileable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

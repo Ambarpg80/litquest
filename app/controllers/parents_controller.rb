@@ -13,13 +13,13 @@ class ParentsController < ApplicationController
     end
 
     def create 
-        new_parent = Parent.create(parent_params) 
+        new_parent = Parent.create!(parent_params) 
         render json: new_parent, status: :created
     end
 
     def update 
         parent = Parent.find(params[:id])
-        parent.update(adult_params)
+        parent.update!(adult_params)
         render json: parent, status: :accepted
     end
 
@@ -28,6 +28,7 @@ class ParentsController < ApplicationController
         parent.destroy
         head :no_content
     end
+    
 
     private
 

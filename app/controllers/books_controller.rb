@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     end
 
     def update 
-        user = current_user.profileable
+        user = @user.profileable
         book = user.books.find_by(id: params[:id])
         book.update!(book_params)
         render json: book, status: :accepted
@@ -39,4 +39,7 @@ class BooksController < ApplicationController
         params.permit(:title, :author, :publisher, :genre, :thumbnail_url, :preview)
     end
 
+    def current_user
+        UserProfile.find_by(id: session[:user_id])
+    end
 end

@@ -7,9 +7,7 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
     private
-    def current_user
-      user = UserProfile.find_by(id: session[:user_id])
-    end
+   
     
     def parent_or_child(params)
         if params[:age] >= 18
@@ -20,8 +18,8 @@ class ApplicationController < ActionController::API
     end
 
     def authorize
-        user = current_user
-        return render json: {error: "Not Authorized. Please Login or Sign up"}, status: :unauthorized unless user
+        @user =  UserProfile.find_by(id: session[:user_id])
+        return render json: {error: "Not Authorized. Please Login or Sign up"}, status: :unauthorized unless @user
     end
     
     def render_unprocessable_entity(exception)

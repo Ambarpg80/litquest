@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
- 
+ /*++++++++++++++++++++++ START OF HOME PAGE ++++++++++++++++++++++++++++++++ */
 .home-page{
   margin-left: 15%;
   width: 1200px;
@@ -15,6 +15,10 @@ span.home-font{
   top: 45vh;
   text-align: center;
 }
+/*++++++++++++++++++++++ END OF HOME PAGE ++++++++++++++++++++++++++++++++ */
+
+
+/*++++++++++++++++++++++ START OF KIDS CARDS- PARENT/CHILDREN LIST ++++++++++++++++++++++++++++++++ */
 .card{
   display: inline-block;
   border: 1px solid rgb(134, 149, 136);
@@ -38,8 +42,7 @@ div.container {
   background-color: rgba(24, 225, 51, 0.355);
   height: 170px;
   margin-top: 110px;
-  border-radius: 0 0 5px;
-  
+  border-radius: 0 0 5px;  
 }
 
 
@@ -52,8 +55,9 @@ div.container {
   margin-top: 15px;
   text-decoration: none; 
 }
-/* 5px 0 0 */
+/*++++++++++++++++++++++ END OF KIDS CARDS- PARENT/CHILDREN LIST  ++++++++++++++++++++++++++++++++ */
 
+/*++++++++++++++++++++++ START OF BOOK LIST- PARENT/CHILD DETAILS ++++++++++++++++++++++++++++++++ */
 .book{
   display: inline-flex;
   border: 1px solid rgb(65, 78, 67);
@@ -63,13 +67,9 @@ div.container {
   margin-right: 20px;
  
 }
+/*++++++++++++++++++++++ END OF BOOK LIST- PARENT/CHILD DETAILS ++++++++++++++++++++++++++++++++ */
 
-table, th, td {
-  border: 1px solid;
-}
-
-
-
+/*++++++++++++++++++++++ START OF NAVBAR ++++++++++++++++++++++++++++++++ */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -89,6 +89,9 @@ table, th, td {
 .active {
    color: white
 }
+/*++++++++++++++++++++++ END OF NAVBAR ++++++++++++++++++++++++++++++++ */
+
+/*++++++++++++++++++++++ START OF AUTH FORMS ++++++++++++++++++++++++++++++++ */
 .auth-container{    /*job card container */
   /* transition-timing-function: ease-in-out;
   transition-duration: 10s; */
@@ -100,18 +103,23 @@ table, th, td {
   width : 100%;
  
 }
+/*++++++++++++++++++++++ END OF AUTH FORMS ++++++++++++++++++++++++++++++++ */
 
+/*++++++++++++++++++++++ START OF CHILD SUMMARIES-PARENT VIEW ++++++++++++++++++++++++++++++++ */
 .single-book{
    border: 1px solid rgb(65, 78, 67);
    margin: 20px;
    padding: 10px;
 }
+/*++++++++++++++++++++++ END OF CHILD SUMMARIES-PARENT VIEW ++++++++++++++++++++++++++++++++ */
 
+/*++++++++++++++++++++++ START OF BOOKS DISPLAYS-CHILD VIEW ++++++++++++++++++++++++++++++++ */
 .book-details{
   margin: 10px;
   display: inline-flex;
   text-align: left;
 }
+
 
 .thumbnail{
   display: block;
@@ -134,8 +142,10 @@ img {
   font-size: 12px; 
   
 }
+/*++++++++++++++++++++++ END OF CHILD BOOKS DISPLAY-CHILD VIEW ++++++++++++++++++++++++++++++++ */
 
-.form-container{
+/*++++++++++++++++++++++ START OF CHILD SUMMARIES FORM-CHILD VIEW ++++++++++++++++++++++++++++++++ */
+div.form-container{
   text-align: start;
   font-size : 16px;
   color:#123024;  
@@ -165,3 +175,4 @@ textarea{
   height: 25px;
   width: 450px;
 }
+/*++++++++++++++++++++++ END OF BOOK/SUMMARIES FORMS-CHILD VIEW ++++++++++++++++++++++++++++++++ */

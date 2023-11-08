@@ -44,7 +44,7 @@ function NewBookForm({ onBookAdded, handleBookForm}){
             res.json().then(newBook =>  { onBookAdded(newBook)
                                           handleBookForm() })
             }else{
-            res.json().then(error => setBookError( error.errors.map(err => <ul><li key={err}>{err}</li></ul>) ) )
+            res.json().then(error => setBookError( error.errors.map(err => <li key={err}>{err}</li>) ) )
             }
         })                        
         }

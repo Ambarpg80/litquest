@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     end
 
     def update 
-        user = current_user.profileable
+        user = @user.profileable
         review = Review.find_by(id: params[:id]) 
         if user&.id == review.child_id
         review.update!(review_params)
@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        user = current_user.profileable
+        user = @user.profileable
         review = Review.find_by(id: params[:id]) 
         if user&.id == review.child_id
         review.destroy

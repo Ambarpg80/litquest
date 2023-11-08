@@ -7,7 +7,7 @@ class UserProfilesController < ApplicationController
     end
 
     def show
-        user = current_user.profileable
+        user = @user.profileable
         render json: user, status: :ok
     end
 
@@ -25,8 +25,7 @@ class UserProfilesController < ApplicationController
 
 
     def update      
-        profile = current_user
-        profile.update!(user_params)
+        @user.update!(user_params)
         if profile
         render json: profile, status: :accepted
         end

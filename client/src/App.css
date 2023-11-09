@@ -70,10 +70,7 @@ div.container {
 /*++++++++++++++++++++++ END OF BOOK LIST- PARENT/CHILD DETAILS ++++++++++++++++++++++++++++++++ */
 
 /*++++++++++++++++++++++ START OF NAVBAR ++++++++++++++++++++++++++++++++ */
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 .App-header {
   background-color: #35b91e;

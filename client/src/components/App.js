@@ -1,5 +1,7 @@
 import '../App.css';
-import React, {useState, useEffect, useContext } from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import  React from 'react';
+import {useState, useEffect, useContext } from 'react';
 import {  Routes, Route} from "react-router-dom";
 import { userContext } from './context/UserProvider';
 import LoginForm from './sessions/LoginForm';
@@ -9,6 +11,7 @@ import Home from './Home'
 import BookList from './child_view/BookList.js';
 import ParentPage from './parent_view/ParentPage';
 import ChildDetails from './parent_view/ChildDetails';
+
 
 function App() { 
   const {currentUser, kidsBooks, setKidsBooks, kidsBookChange} = useContext(userContext);
@@ -72,8 +75,8 @@ function removeReview(deletedReview){
 }
 
   return (
-    <div className="App">
-      <nav className="App-header"> <NavBar/> </nav>
+    <div className="one">
+      <nav className="App-header"> <NavBar />  </nav>
         <Routes>
             <Route exact path="/" element={ <Home/> } /> 
             <Route path="/my_books" element={<BookList allBooks={allBooks} 

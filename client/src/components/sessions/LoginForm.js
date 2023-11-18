@@ -28,17 +28,19 @@ function LoginForm({onShowLogin}){
     return (
     
     <div className='auth-container'>
-        <h1 >Welcome to LitQuest</h1>
-       <form onSubmit={handleLogin}>
-            <label >Username:
-                <input type="text" 
+       <form onSubmit={handleLogin} >
+       <h3 >Please Login</h3>
+            <label className='auth-label'>Username:
+                <input className= "auth-input"
+                       type="text" 
                        id="username" 
                        value={username}
                        onChange={(e) => setUsername(e.target.value)}>
                 </input>
             </label> <br/>
-            <label >Password:
-                <input type="password"  
+            <label className='auth-label'>Password:
+                <input className= "auth-input"
+                       type="password"  
                        id="password" 
                        value={password}
                        onChange={(e) => setPassword(e.target.value)}>

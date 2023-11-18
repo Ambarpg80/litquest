@@ -46,41 +46,47 @@ function SignUpForm({ onShowSignUp}){
         }
 
     return(
-    <div className= "auth-container" >
-        <h2 >Please Sign up</h2>
-        <form onSubmit={handleSignup}>
-            <label > Name:
-                <input onChange={(e)=> setProfileableName(e.target.value) } 
+    <div className='auth-container'>
+         <form onSubmit={handleSignup} > 
+            <h3 >Please Sign up</h3>
+            <label className='auth-label'> Name:
+                <input className= "auth-input"
+                       onChange={(e)=> setProfileableName(e.target.value) } 
                        type="text" 
                        id="name" 
                        required value={profileableName}></input>
             </label> <br/>
-            <label >Email:
-                <input onChange={inputChange} 
+            <label className='auth-label'>Email:
+                <input className= "auth-input"
+                       onChange={inputChange} 
                        type="text" 
                        id="email" 
                        required value={newUser.email}></input>
             </label> <br/>
-            <label >Age:
-                <input onChange={inputChange} 
+            <label className='auth-label'>Age:
+                <input className= "auth-input"
+                       onChange={inputChange} 
                        type="number" 
                        id="age" 
                        required value={newUser.age}></input>
             </label> <br/>
-            <label >Username:
-                <input onChange={inputChange} 
+            <label className='auth-label'>Username:
+                <input className= "auth-input"
+                       onChange={inputChange} 
                        type="text" 
                        id="username" 
                        required value={newUser.username}></input>
             </label> <br/>
-            <label >Password:
-                <input onChange={inputChange} 
+            <label className='auth-label'>Password:
+                <input className= "auth-input"
+                       onChange={inputChange} 
                        type="password" 
                        id="password" 
                        required value={newUser.password}></input>
             </label> <br/>
-            <label >Confirm Password:
-                <input onChange={inputChange}
+            <label className='auth-label'>Confirm Password:
+                <input className= "auth-input"
+                       onChange={inputChange}
                        type="password" 
                        id="password_confirmation" 
                        required value={newUser.password_confirmation}></input>

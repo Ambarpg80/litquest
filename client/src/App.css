@@ -1,23 +1,197 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+div.container{
+  
+  width: 100%;
 }
+/*++++++++++++++++++++++ START OF NAVBAR ++++++++++++++++++++++++++++++++ */
+nav {
+ margin-top: 0;
+  display: inline-flex;
+  justify-content: start;
+  text-align: center;
+  font-size : 20px;
+  color:#0c2d11; 
+  width: 100%
+}
+
+.App-header {
+  
+  position: fixed;
+  background-color: #35b91e;
+  min-height: 5dvh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3dvh;
+  font-size: 25px;
+  color: rgb(3, 50, 13);  
+}
+
+.active {
+   color: white
+}
+/*++++++++++++++++++++++ END OF NAVBAR ++++++++++++++++++++++++++++++++ */
+
+/*++++++++++++++++++++++ START OF AUTH FORMS ++++++++++++++++++++++++++++++++ */
+header{   
+  display: inline-flex;
+  justify-content: end;
+  text-align: center;
+  font-size : 20px;
+  color:#0c2d11; 
+  margin-top: 50px;
+  width: 100%;
+  /* border:  solid 2px rgba(0, 63, 13, 0.659); */
+}
+
+header.auth-container{
+  justify-content: space-around;
+  margin-right:15px;
+  padding: 10px;
+  background-color: rgba(24, 225, 51, 0.355);
+  border-radius: 5px;  
+  
+}
+
+.auth-label{
+  display: inline-block;
+  clear: left;
+  width: 380px;
+  text-align: right;
+}
+
+.auth-input{    /*job card container */
+  display: inline-block;
+  border:  solid 2px rgba(0, 63, 13, 0.659);
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  height: 25px;
+  width: 200px;
+  max-width: 300px;
+ 
+}
+/*++++++++++++++++++++++ END OF AUTH FORMS ++++++++++++++++++++++++++++++++ */
+
  /*++++++++++++++++++++++ START OF HOME PAGE ++++++++++++++++++++++++++++++++ */
-.home-page{
-  margin-left: 15%;
-  width: 1200px;
+ .welcome{
+  width: 100%;
   height: 80vh;  
 }
 
-span.home-font{
-  font-size: 80px;
+.welcome-font{
   color: ivory;
-  position: relative;
-  top: 45vh;
+  position: absolute;
+  left: 35%; 
+  top: 35%;
   text-align: center;
+ }
+
+#welcome-image {
+  background-image: url('https://www.cerritoslibrary.us/media/qppdls54/2childrens-area1.jpg');
+  background-repeat: no-repeat; 
+  background-size: 100%;
+  height: 70dvh;
+  width: 100%;
+  
+}
+
+
+#stat-cards{
+  padding: 5px 16px;
+  background-color: rgb(76, 230, 96);
+  height: 200px;
+  margin-top: 20%;
+  border-radius: 5px;  
+  border: 3px solid rgba(72, 86, 72, 0.13);
+  justify-content: space-evenly;
+}
+
+div.stat-card{
+  display: inline-flex;
+  align-items: center;
+  font-size: 25px;
+  color: rgb(49, 239, 144);
+  margin: 45px;
+  width: 25%;
+  height: 200px;
+  padding-top: 8%;
+  border-radius: 15px;
+  background-color: rgba(2, 2, 85, 0.801);
+}
+
+#litquest{
+  background-image: url('https://images.unsplash.com/photo-1599689868384-59cb2b01bb21?q=80&w=1646&auto=format&fit=fill&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  display: inline-flex;
+  color: #fcf9f9;
+  padding-bottom: 10px;
+}
+
+#kid-benefits{
+  display: inline-flex;
+  width: 200px;
+  height: 200px;
+  /* align-items: center; */
+  font-size: 20px;
+  color:rgb(2, 2, 85);
+  margin: 45px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: rgba(41, 214, 127, 0.766);
+}
+#children{
+  margin-top: 20px;
+  padding-left: 70px;
+  background: rgba(224, 225, 227, 0.484); 
+  padding-top: 15px;
+}
+
+#parents {
+  background-image:  url("https://images.unsplash.com/photo-1501349800519-48093d60bde0?q=80&w=1680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+ 
+  /* height: fit-content;
+  width: fit-content; */
+}
+
+#parent-benefits{
+  display: inline;
+  text-align: right;
+  font-size: 20px;
+  color:rgb(33, 31, 28);
+  padding: 5px;
+}
+
+h2{
+  text-align: center;
+   margin-top: 10px;
+}
+
+img#parent-portal{
+  background-image: url("./components/Parents-view of child summaries.png");
+  float: right; 
+  height: 100px;
+  width: 200px;
+  object-fit: contain;
+  display: inline-flex;
+  height: 300px;
+  width: 620px;
+  padding: 10px;
+}
+
+img#child-portal{
+  background-image: url("./components/Book and Summaries.png");
+  /* margin-right: 50%;  */
+  object-fit: contain;
+  display: inline-flex;
+  height: 300px;
+  width: 390px;
+  padding: 10px;
 }
 /*++++++++++++++++++++++ END OF HOME PAGE ++++++++++++++++++++++++++++++++ */
-
-
 /*++++++++++++++++++++++ START OF KIDS CARDS- PARENT/CHILDREN LIST ++++++++++++++++++++++++++++++++ */
 .card{
   display: inline-block;
@@ -37,7 +211,7 @@ span.home-font{
 }
 
 /* Add some padding inside the card container */
-div.container {
+div.card-container {
   padding: 2px 16px;
   background-color: rgba(24, 225, 51, 0.355);
   height: 170px;
@@ -68,39 +242,6 @@ div.container {
  
 }
 /*++++++++++++++++++++++ END OF BOOK LIST- PARENT/CHILD DETAILS ++++++++++++++++++++++++++++++++ */
-
-/*++++++++++++++++++++++ START OF NAVBAR ++++++++++++++++++++++++++++++++ */
-
-
-.App-header {
-  background-color: #35b91e;
-  min-height: 5vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 3vh;
-  font-size: 25px;
-  color: rgb(6, 81, 22);
-}
-
-.active {
-   color: white
-}
-/*++++++++++++++++++++++ END OF NAVBAR ++++++++++++++++++++++++++++++++ */
-
-/*++++++++++++++++++++++ START OF AUTH FORMS ++++++++++++++++++++++++++++++++ */
-.auth-container{    /*job card container */
-  /* transition-timing-function: ease-in-out;
-  transition-duration: 10s; */
-  display: flex-box;
-  font-size : 20px;
-  color:#0c2d11; 
-  padding-top: 30px;
-  padding-bottom: 50px;
-  width : 100%;
- 
-}
-/*++++++++++++++++++++++ END OF AUTH FORMS ++++++++++++++++++++++++++++++++ */
 
 /*++++++++++++++++++++++ START OF CHILD SUMMARIES-PARENT VIEW ++++++++++++++++++++++++++++++++ */
 .single-book{
@@ -155,7 +296,7 @@ div.form-container{
   padding-bottom: 30px;
   width : 700px;
 }
-div.form-container input{
+div.form-container + input{
   border:  solid 2px rgba(0, 63, 13, 0.353);
   border-radius: 5px;
   font-size: 16px;
@@ -173,3 +314,21 @@ textarea{
   width: 450px;
 }
 /*++++++++++++++++++++++ END OF BOOK/SUMMARIES FORMS-CHILD VIEW ++++++++++++++++++++++++++++++++ */
+/*++++++++++++++++++++++ START OF FOOTER ICONS +++++++++++++++++++++++++++++++++++++*/
+footer{
+  width: 100%;
+  height: 20dvh;
+  display:flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #043d0d;
+  color: white ;
+  font-size: 18px;
+}
+ul.social{
+  display: inline-flex;
+  justify-content: space-evenly;
+  font-size: 30px;
+  color: white;
+}
+/*++++++++++++++++++++++ END OF FOOTER ICONS +++++++++++++++++++++++++++++++++++++*/

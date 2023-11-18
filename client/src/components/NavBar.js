@@ -7,10 +7,13 @@ import { userContext } from './context/UserProvider';
 
 function NavBar(){
     const {currentUser, isLoggedIn ,logout} =useContext(userContext)
+    const [isActive, setIsActive] = useState(false)
     const [showLogin, setShowLogin] = useState(false)
     const [showSignUp, setShowSignUp] = useState(false)
 
-    const linkStyle ={marginRight: "15px"}
+    const linkStyle ={ 
+                      position: 'absolute',
+                      top: 10, }
     const logoutLink = {fontFamily: "Helvetica",
                             position: 'absolute',
                             top: 10, 
@@ -31,6 +34,7 @@ function NavBar(){
 
     function handleshowLogin(){setShowLogin(!showLogin)}
     function handleshowSignUp(){setShowSignUp(!showSignUp)}
+    function handleActive(){setIsActive(!isActive)}
 
     function logoutUser(){
         fetch ("/logout",{
@@ -42,23 +46,37 @@ function NavBar(){
     
   
     return(
-    <div>
-       
-        <nav className="App-header active" >
-            <NavLink style={linkStyle} to="/"> LitQuest </NavLink>
-            <NavLink style={linkStyle} to="/me/children">{isLoggedIn && 
-         currentUser.user_profile.profileable_type ===  "Parent" ? "Dashboard": null }</NavLink>
-            <NavLink style={linkStyle} to="/my_books">{isLoggedIn && 
-         currentUser.user_profile.profileable_type === "Child" ? "My Books": null }</NavLink>
-            <NavLink style={loginLink} onClick={handleshowLogin}>{isLoggedIn ? null : "Login"}</NavLink>
-            <NavLink style={signupLink} onClick={handleshowSignUp}>{isLoggedIn ? null : "Signup"} </NavLink>
-            <NavLink style={logoutLink}  onClick={logoutUser}>{isLoggedIn ? "Logout" : null} </NavLink>
+    <div className="">
+        <header > 
+             <div  className="auth-container" >{ showLogin && !isLoggedIn ? <LoginForm onShowLogin={handleshowLogin}/> : null}</div>
+             <div className="auth-container">{ showSignUp && !isLoggedIn ? <SignUpForm onShowSignUp={handleshowSignUp}/> : null}</div>
+        </header>
+        <nav onClick={handleActive} >
+            <NavLink  className={isActive ? "active" : ""} 
+                      style={linkStyle} to="/"> LitQuest 
+            </NavLink>
+            <NavLink className={isActive ? "active" : ""} 
+                     style={linkStyle} 
+                     to="/me/children">{isLoggedIn && currentUser.user_profile.profileable_type ===  "Parent" ? "Dashboard": null }
+            </NavLink>
+            <NavLink className={isActive ? "active" : ""} 
+                     style={linkStyle} 
+                     to="/my_books">{isLoggedIn && currentUser.user_profile.profileable_type === "Child" ? "My Books": null }
+            </NavLink>
+            <NavLink className={isActive ? "active" : ""}  
+                     style={loginLink} 
+                     onClick={handleshowLogin}>{isLoggedIn ? null : "Login"}
+            </NavLink>
+            <NavLink className={isActive ? "active" : ""} 
+                     style={signupLink} 
+                     onClick={handleshowSignUp}>{isLoggedIn ? null : "Signup"} 
+            </NavLink>
+            <NavLink className={isActive ? "active" : ""} 
+                     style={logoutLink}  
+                     onClick={logoutUser}>{isLoggedIn ? "Logout" : null} 
+            </NavLink>
         
         </nav>
-        <header > 
-            { showLogin && !isLoggedIn ? <LoginForm onShowLogin={handleshowLogin}/> : null}
-            { showSignUp && !isLoggedIn ? <SignUpForm onShowSignUp={handleshowSignUp}/> : null}
-        </header>
     </div> 
     )
 }

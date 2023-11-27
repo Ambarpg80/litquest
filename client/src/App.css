@@ -76,12 +76,15 @@ header.auth-container{
 }
 
 .welcome-font{
-  color: rgb(254, 254, 254);
+  color: rgb(248, 248, 248);
   position: absolute;
   left: 30%;  
   top: 35%;
   text-align: center;
   font-family: 'Acme', sans-serif;
+  text-shadow: 4px 3px 2px #640404;
+  /* background-color: rgba(246, 248, 246, 0.383); */
+  
  }
 
 #welcome-image {
@@ -111,6 +114,7 @@ div.stat-card{
   background-image: url('https://images.unsplash.com/photo-1599689868384-59cb2b01bb21?q=80&w=1646&auto=format&fit=fill&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   display: inline-flex;
   color: #fcf9f9;
+  text-shadow: 3px 2px 1px #760505;
   padding-bottom: 10px;
 }
 

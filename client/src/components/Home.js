@@ -13,7 +13,7 @@ function Home(){
 
     
   return(
-    <div >  
+    <div  >  
       <header >
         <div id="welcome-image"></div>  
         <div className="welcome-font">
@@ -29,7 +29,7 @@ function Home(){
 
       <div id="litquest" style={{paddingLeft: "70px", paddingTop: "25px"}} >
         <div style={{float: "left"}}>
-        <h1>What is LitQuest?</h1>
+        <h1 style={{fontFamily: 'Acme, sans-serif'}}>What is LitQuest?</h1>
           <p style={{display: "block", fontSize: "25px", width:"45%"}}>A book logging application for students that will help them to write about books that they read. It is a way for parents to keep track of what their kids are reading and give them insight into how their kids read as well as creating a means for discussion.</p>
        </div> 
        <div > 
@@ -39,17 +39,17 @@ function Home(){
       </div>
 
       <div id="children">
-        <h2>Benefits to Children</h2>
+        <h2 style={{fontFamily: 'Acme, sans-serif'}}>Benefits to Children</h2>
          {benefitsToChild.map(benefit => <div key={benefit} id="kid-benefits">{benefit}</div>) }
       </div>
 
       <div id="parents"  >
-          <h2 style={{textAlign: "center", padding: "15px", color:"rgb(75, 73, 70)"}}>
+          <h2 style={{textAlign: "center", padding: "15px", color:"rgb(75, 73, 70)", fontFamily: 'Acme, sans-serif'}}>
             Benefits for parents
-          </h2>
+          </h2 >
             {benefitsToParent.map(benefit => 
           <div key={benefit.title} id="parent-benefits">
-              <p > <b>{benefit.title}</b> :{benefit.reason}</p>
+              <p > <b>{benefit.title}</b> : {benefit.reason}</p>
           </div>) }
       </div>
 

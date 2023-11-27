@@ -75,7 +75,7 @@ function removeReview(deletedReview){
 }
 
   return (
-    <div className="one">
+    <div style={{fontFamily: 'Acme, sans-serif'}} >
       <nav className="App-header"> <NavBar />  </nav>
         <Routes>
             <Route exact path="/" element={ <Home/> } /> 

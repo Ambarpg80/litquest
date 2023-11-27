@@ -11,29 +11,27 @@ function NavBar(){
     const [showLogin, setShowLogin] = useState(false)
     const [showSignUp, setShowSignUp] = useState(false)
 
-    const lgogStyle={marginLeft: "15px",
+    const logoStyle={marginLeft: "15px",
                      position: 'absolute',
-                     top: 10,}
-    const linkStyle ={ marginLeft: "100px",
+                     top: 10,
+                     }
+    const linkStyle ={marginLeft: "100px",
                       position: 'absolute',
                       top: 10,}
-    const logoutLink = {fontFamily: "Helvetica",
-                            position: 'absolute',
-                            top: 10, 
-                            right: 30, 
-                            textDecoration: 'none'}
+    const logoutLink = {position: 'absolute',
+                        top: 10, 
+                        right: 30, 
+                        textDecoration: 'none'}
     
-    const signupLink = {fontFamily: "Helvetica",
-                            position: 'absolute',
-                            top: 10, 
-                            right: 120, 
-                            textDecoration: 'none'}
+    const signupLink = {position: 'absolute',
+                        top: 10, 
+                        right: 120, 
+                        textDecoration: 'none'}
 
-    const loginLink = {fontFamily: "Helvetica",
-                            position: 'absolute',
-                            top: 10, 
-                            right: 220, 
-                            textDecoration: 'none'}
+    const loginLink = {position: 'absolute',
+                       top: 10, 
+                       right: 220, 
+                       textDecoration: 'none'}
 
     function handleshowLogin(){setShowLogin(!showLogin)}
     function handleshowSignUp(){setShowSignUp(!showSignUp)}
@@ -49,14 +47,14 @@ function NavBar(){
     
   
     return(
-    <div>
+    <div >
         <header style={{marginTop: "50px"}}> 
              <div  className="auth-container" >{ showLogin && !isLoggedIn ? <LoginForm onShowLogin={handleshowLogin}/> : null}</div>
              <div className="auth-container">{ showSignUp && !isLoggedIn ? <SignUpForm onShowSignUp={handleshowSignUp}/> : null}</div>
         </header>
         <nav onClick={handleActive} >
             <NavLink  className={isActive ? "active" : ""} 
-                      style={lgogStyle} to="/"> LitQuest 
+                      style={logoStyle} to="/"> LitQuest 
             </NavLink>
             <NavLink className={isActive ? "active" : ""} 
                      style={linkStyle} 

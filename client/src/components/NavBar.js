@@ -11,9 +11,12 @@ function NavBar(){
     const [showLogin, setShowLogin] = useState(false)
     const [showSignUp, setShowSignUp] = useState(false)
 
-    const linkStyle ={ 
+    const lgogStyle={marginLeft: "15px",
+                     position: 'absolute',
+                     top: 10,}
+    const linkStyle ={ marginLeft: "100px",
                       position: 'absolute',
-                      top: 10, }
+                      top: 10,}
     const logoutLink = {fontFamily: "Helvetica",
                             position: 'absolute',
                             top: 10, 
@@ -46,14 +49,14 @@ function NavBar(){
     
   
     return(
-    <div className="">
-        <header > 
+    <div>
+        <header style={{marginTop: "50px"}}> 
              <div  className="auth-container" >{ showLogin && !isLoggedIn ? <LoginForm onShowLogin={handleshowLogin}/> : null}</div>
              <div className="auth-container">{ showSignUp && !isLoggedIn ? <SignUpForm onShowSignUp={handleshowSignUp}/> : null}</div>
         </header>
         <nav onClick={handleActive} >
             <NavLink  className={isActive ? "active" : ""} 
-                      style={linkStyle} to="/"> LitQuest 
+                      style={lgogStyle} to="/"> LitQuest 
             </NavLink>
             <NavLink className={isActive ? "active" : ""} 
                      style={linkStyle} 

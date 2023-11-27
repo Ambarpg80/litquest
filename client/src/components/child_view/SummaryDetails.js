@@ -4,7 +4,7 @@ import SummaryEditForm from "../forms/SummaryEditForm";
 
 function SummaryDetails({review, book, onRemoveReview, onUpdateReview }){
    const[editForm, setEditForm] = useState(false)
-   const buttonStyling = { marginRight: "5px", marginBottom: "10px"}
+   const buttonStyling = {  marginBottom: "10px",position: "relative", left:"22%"}
 
    function showEditForm(){
       setEditForm(!editForm)
@@ -17,9 +17,10 @@ function SummaryDetails({review, book, onRemoveReview, onUpdateReview }){
    } 
   
    return(
-       <div >
+       <div style={{position: "relative", left:"30%"}}>
           { editForm ? <SummaryEditForm book={book} review={review} showEditForm={showEditForm} onUpdateReview={onUpdateReview} /> :
           <div>
+            <h5>Summaries</h5>
           <p>Summary: {review.summary}</p> 
           <p>Rating: {review.rating} out of 5</p>
          </div>
@@ -29,7 +30,7 @@ function SummaryDetails({review, book, onRemoveReview, onUpdateReview }){
                     type="button"> Edit Summary 
             </button> 
            
-          <button onClick={deleteReview}>Delete Summary</button>
+          <button style={{position: "relative"}} onClick={deleteReview}>Delete Summary</button>
         
        </div>
     )

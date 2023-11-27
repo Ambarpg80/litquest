@@ -28,16 +28,17 @@ useEffect(()=>{
       setShowForm(!showForm) 
     }
     
-  {console.log(kids)}
+    const centeredStyling ={marginBottom: "15px", position: "relative",left:"50%"}
+  
 if(currentUser)
   return(
     <div >
-        <p> Click on the button to add your child below </p>
-          <button onClick={handleChildForm} style={{marginBottom: "15px"}}>Add a Child</button>
+        <p style={{margin: "15px", position: "relative",left:"40%"}}> Click on the button below to add a child</p>
+          <button onClick={handleChildForm} style={centeredStyling}>Add a Child</button>
                 {showForm ? <div> <ChildSignupForm  onShowSignUp={handleChildForm} onAddChild={addChild} />  </div>: null}
         <div>
-            <h3>Children</h3>
-            <div> 
+            <h3 style={centeredStyling}>Children</h3>
+            <div > 
               
               {kids.map(child=> 
                 <div key={child.id}>  

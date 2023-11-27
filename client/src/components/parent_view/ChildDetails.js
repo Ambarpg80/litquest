@@ -12,9 +12,10 @@ function ChildDetails(){
         .then(childUser=> setChildUser(childUser))
        },[])
 
+
       return(
       <div style={{marginTop:"5vh"}}>
-        <h2>Books Read</h2>
+        <h2>Books Read {childUser.name} </h2>
         <div  style={{marginTop:"5vh"}}>
        
         {childUser.books?.map(book =>  

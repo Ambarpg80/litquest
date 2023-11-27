@@ -8,7 +8,7 @@ function BookList({allBooks, onBookAdded,onAddReview, onUpdateReview, onRemoveRe
     const {kidsBooks} = useContext(userContext);
     const [showBookForm, setShowBookForm] = useState(false);
     const [showSummaryForm, setShowSummaryForm]= useState(false);
-    const buttonStyle = { marginTop: "25px", marginBottom: "10px", marginRight: "10px"}
+    const buttonStyle = { position: "relative", left:"40%"}
     
 
   function handleBookForm(){
@@ -19,7 +19,7 @@ function BookList({allBooks, onBookAdded,onAddReview, onUpdateReview, onRemoveRe
   }
     
     return(
-      <div>
+      <div >
         <button style={buttonStyle} onClick={handleBookForm}> Add A New Book </button> 
         <button style={buttonStyle} onClick={handleSummaryForm}> Add Summary </button> 
         {showBookForm  ?  <div><NewBookForm  onBookAdded={onBookAdded} handleBookForm={handleBookForm} /></div> : null} 

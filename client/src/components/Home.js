@@ -15,14 +15,14 @@ function Home(){
   return(
     <div >  
       <header >
-        <img id="welcome-image" /> 
-        <span className="welcome-font">
-        <p style={{fontSize: "70px"}}><b> Welcome to LitQuest </b></p><br/>
-        <p style={{fontSize: "35px"}}> One Adventure At A Time</p> 
-        </span>
+        <div id="welcome-image"></div>  
+        <div className="welcome-font">
+        <h1 style={{fontSize: "70px"}}> Welcome to LitQuest</h1><br/>
+        <p style={{fontSize: "35px"}}> Logging One Adventure At A Time</p> 
+        </div>
       </header>
 
-      <div className="stat-cards container" >
+      <div className="stat-cards " >
         <h1 style={{textAlign:"center", paddingTop:"40px"}}> <em>Did You Know?</em></h1>
       {stats.map(stat=>  <div key={stat} className="stat-card"><div style={{padding: "10px", textAlign:"center", height:"250px",borderRadius:"20px"}}>{stat}</div> </div>)}
       </div>
@@ -33,8 +33,8 @@ function Home(){
           <p style={{display: "block", fontSize: "25px", width:"45%"}}>A book logging application for students that will help them to write about books that they read. It is a way for parents to keep track of what their kids are reading and give them insight into how their kids read as well as creating a means for discussion.</p>
        </div> 
        <div > 
-          <img id="parent-portal" style={{float: "right", marginRight: "30%"}}/>
-          <img id="child-portal"  style={{float: "right", marginRight: "10%"}}/>
+          <div id="parent-portal" style={{float: "right", marginRight: "30%"}}></div>
+          <div id="child-portal"  style={{float: "right", marginRight: "10%"}}></div>
         </div> 
       </div>
 
@@ -44,8 +44,7 @@ function Home(){
       </div>
 
       <div id="parents"  >
-          <img  ></img>
-          <h2 style={{textAlign: "center", marginTop: "5px", padding: "15px", color:"rgb(75, 73, 70)"}}>
+          <h2 style={{textAlign: "center", padding: "15px", color:"rgb(75, 73, 70)"}}>
             Benefits for parents
           </h2>
             {benefitsToParent.map(benefit => 
@@ -64,7 +63,6 @@ function Home(){
           <i className="fa-brands fa-instagram"></i>
           <i className="fa-brands fa-tiktok"></i>
         </ul>
-       
       </footer> 
     </div>    
    

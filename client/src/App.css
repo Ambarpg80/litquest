@@ -2,24 +2,22 @@
   text-align: center;
 } */
 
-div.container{
-  
-  width: 100%;
+button{
+  margin: 10px;
+  border-radius: 10px ; 
+  color: green;
 }
 /*++++++++++++++++++++++ START OF NAVBAR ++++++++++++++++++++++++++++++++ */
 nav {
- margin-top: 0;
-  display: inline-flex;
-  justify-content: start;
-  text-align: center;
+  display: inline;
+  /* justify-content: start; */
+  /* text-align: center; */
   font-size : 20px;
   color:#0c2d11; 
-  width: 100%
+  width: 100%;
 }
 
 .App-header {
-  
-  position: fixed;
   background-color: #35b91e;
   min-height: 5dvh;
   display: flex;
@@ -38,13 +36,10 @@ nav {
 /*++++++++++++++++++++++ START OF AUTH FORMS ++++++++++++++++++++++++++++++++ */
 header{   
   display: inline-flex;
-  justify-content: end;
   text-align: center;
   font-size : 20px;
   color:#0c2d11; 
-  margin-top: 50px;
   width: 100%;
-  /* border:  solid 2px rgba(0, 63, 13, 0.659); */
 }
 
 header.auth-container{
@@ -84,35 +79,24 @@ header.auth-container{
 }
 
 .welcome-font{
-  color: ivory;
+  color: rgb(254, 254, 254);
   position: absolute;
-  left: 35%; 
+  left: 30%;  
   top: 35%;
   text-align: center;
  }
 
 #welcome-image {
-  background-image: url('https://www.cerritoslibrary.us/media/qppdls54/2childrens-area1.jpg');
-  background-repeat: no-repeat; 
+  background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-size: 100%;
   height: 70dvh;
   width: 100%;
-  
 }
 
-
-#stat-cards{
-  padding: 5px 16px;
-  background-color: rgb(76, 230, 96);
-  height: 200px;
-  margin-top: 20%;
-  border-radius: 5px;  
-  border: 3px solid rgba(72, 86, 72, 0.13);
-  justify-content: space-evenly;
-}
 
 div.stat-card{
   display: inline-flex;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 25px;
   color: rgb(49, 239, 144);
@@ -131,11 +115,16 @@ div.stat-card{
   padding-bottom: 10px;
 }
 
+#children{
+  padding-left: 70px;
+  background: rgba(224, 225, 227, 0.484); 
+  padding-top: 15px;
+}
+
 #kid-benefits{
   display: inline-flex;
   width: 200px;
   height: 200px;
-  /* align-items: center; */
   font-size: 20px;
   color:rgb(2, 2, 85);
   margin: 45px;
@@ -143,34 +132,27 @@ div.stat-card{
   border-radius: 15px;
   background-color: rgba(41, 214, 127, 0.766);
 }
-#children{
-  margin-top: 20px;
-  padding-left: 70px;
-  background: rgba(224, 225, 227, 0.484); 
-  padding-top: 15px;
-}
+
 
 #parents {
   background-image:  url("https://images.unsplash.com/photo-1501349800519-48093d60bde0?q=80&w=1680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
- 
-  /* height: fit-content;
-  width: fit-content; */
 }
 
-#parent-benefits{
-  display: inline;
-  text-align: right;
+#parent-benefits p{
+  display: inline-flex;
+  text-align: left;
   font-size: 20px;
   color:rgb(33, 31, 28);
   padding: 5px;
+  margin-left: 30%;
+  
 }
 
 h2{
   text-align: center;
-   margin-top: 10px;
 }
 
-img#parent-portal{
+div#parent-portal{
   background-image: url("./components/Parents-view of child summaries.png");
   float: right; 
   height: 100px;
@@ -182,7 +164,7 @@ img#parent-portal{
   padding: 10px;
 }
 
-img#child-portal{
+div#child-portal{
   background-image: url("./components/Book and Summaries.png");
   /* margin-right: 50%;  */
   object-fit: contain;
@@ -193,16 +175,17 @@ img#child-portal{
 }
 /*++++++++++++++++++++++ END OF HOME PAGE ++++++++++++++++++++++++++++++++ */
 /*++++++++++++++++++++++ START OF KIDS CARDS- PARENT/CHILDREN LIST ++++++++++++++++++++++++++++++++ */
+
 .card{
-  display: inline-block;
+  display: flex;
   border: 1px solid rgb(134, 149, 136);
   margin: 30px;
-  width: 20%;
-  height: 300px;
+  width: 15%;
+  height: 350px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.415);
   transition: 0.3s;
   border-radius: 5px;
-  
+  float: left;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -210,24 +193,22 @@ img#child-portal{
   box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.39);
 }
 
-/* Add some padding inside the card container */
+/* green square */
 div.card-container {
-  padding: 2px 16px;
-  background-color: rgba(24, 225, 51, 0.355);
-  height: 170px;
-  margin-top: 110px;
+  padding: 15px;
+  background-color: rgba(24, 225, 51, 0.302);
+  height: 250px;
   border-radius: 0 0 5px;  
 }
-
 
 .avatar{
   width: 125px;
   height: 125px;
   border-radius: 60px ;
   position: relative;
-  margin-left: 20%;
-  margin-top: 15px;
-  text-decoration: none; 
+  /* justify-content: center; */
+  margin-left: 25%;
+  margin-top: 10%;
 }
 /*++++++++++++++++++++++ END OF KIDS CARDS- PARENT/CHILDREN LIST  ++++++++++++++++++++++++++++++++ */
 
@@ -262,14 +243,14 @@ div.card-container {
 .thumbnail{
   display: block;
   text-align: center;
-  height: 200px;
-  width: 150px;
+  height: 220px;
+  width: 175px;
   padding: 10px;
 }
 
 img {
   height: 150px;
- width: 150px;
+  width: 150px;
   float: left;
   margin-bottom: 5px;
 
@@ -284,7 +265,8 @@ img {
 
 /*++++++++++++++++++++++ START OF CHILD SUMMARIES FORM-CHILD VIEW ++++++++++++++++++++++++++++++++ */
 div.form-container{
-  text-align: start;
+  display: flex;
+  text-align: right;
   font-size : 16px;
   color:#123024;  
   background-color:#70d4862e;
@@ -294,36 +276,41 @@ div.form-container{
   padding-left: 5vh;
   padding-top: 20px;
   padding-bottom: 30px;
-  width : 700px;
+  width : 650px;
 }
-div.form-container + input{
+
+.form-container input{
+  display: inline-block;
+  align-items: right;
   border:  solid 2px rgba(0, 63, 13, 0.353);
   border-radius: 5px;
-  font-size: 16px;
-  margin: 10px;
-  height: 20px;
-  width: 550px;
-  max-width: 600px;
-}
-textarea{
-  border-radius: 5px;
-  border:  solid 2px rgba(0, 63, 13, 0.353);
   font-size: 16px;
   margin: 10px;
   height: 25px;
-  width: 450px;
+  width: 400px;
+  max-width: 600px;
+}
+
+.form-container textarea{
+  display: inline-block;
+  border-radius: 5px;
+  border:  solid 2px rgba(0, 63, 13, 0.353);
+  font-size: 16px;
+  margin: 10px;
+  height: 100px;
+  width: 400px;
 }
 /*++++++++++++++++++++++ END OF BOOK/SUMMARIES FORMS-CHILD VIEW ++++++++++++++++++++++++++++++++ */
 /*++++++++++++++++++++++ START OF FOOTER ICONS +++++++++++++++++++++++++++++++++++++*/
 footer{
-  width: 100%;
-  height: 20dvh;
   display:flex;
   flex-direction: column;
   padding: 10px;
   background-color: #043d0d;
   color: white ;
   font-size: 18px;
+  padding-bottom: 30px;
+  
 }
 ul.social{
   display: inline-flex;

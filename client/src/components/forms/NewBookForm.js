@@ -48,7 +48,7 @@ function NewBookForm({ onBookAdded, handleBookForm}){
         }
     return(
        <div >
-        <p> Add a book and summary below.</p>
+        <p style={{textAlign:"center"}}> Add a book and summary below.</p>
         <div className='form-container'>
             <form onSubmit={bookSubmission}>
                 <label>Title: 

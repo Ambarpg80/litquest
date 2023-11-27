@@ -5,7 +5,7 @@ import SummaryList from "./SummaryList";
 
 function BookDetails({book, onAddReview, onRemoveReview, onUpdateReview}){
    const [showSummaries, setShowSummaries]= useState(false)
-   const buttonStyle = { marginTop: "25px", marginBottom: "10px"}
+   const buttonStyle = {position: "relative", left:"40%"}
    
    function handleShowSummaries(){ setShowSummaries(!showSummaries) }
    

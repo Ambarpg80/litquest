@@ -24,14 +24,18 @@
 # IMAGES:
     * Generic profile pic placeholder:
        (https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png)
-    * Homepage- Cerritos library entrance
-       (https://lh5.googleusercontent.com/p/AF1QipNPlvI-xFrHSMfxUQRh2z7Zk0EwE_QRZBXXrW6k=w800-h600-k-no)
+    * Homepage Background Images- 
+       * Book pages: (https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+       * Child Reading: (https://images.unsplash.com/photo-1599689868384-59cb2b01bb21?q=80&w=1646&auto=format&fit=fill&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==)
+       * Color Pencils: (https://images.unsplash.com/photo-1501349800519-48093d60bde0?q=80&w=1680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==)
+    * Statistics- (https://www.thenationalliteracyinstitute.com/literacy-statistics)
     * User profile Avatars:
        Girl: (https://img.freepik.com/free-vector/hand-drawn-caricature-illustration_23-2149871987.jpg?size=338&ext=jpg&ga=GA1.1.386372595.1697932800&semt=ais)
 
        Boy: (https://i.pinimg.com/originals/aa/97/48/aa9748f05c476ade5ffcb2cc15643372.png)
     * Favicon Generator: (https://favicon.io/favicon-generator/)
 
+# SOCIAL MEDIA ICONS: (https://fontawesome.com/)
 # PROJECT DEMO/WALKTHROUGH: (https://youtu.be/b4i5j_kFs70)
 
 # USER FUNCTIONS 

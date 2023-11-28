@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Home(){
   const stats= ["Approximately 40% of students across the nation cannot read at a basic level.","Students who struggle with reading, struggle in other academic areas.","A students disposition changes when they are made to feel inadequate." ]
   const benefitsToChild= ["Practice promotes improved reading skills.",
@@ -55,13 +54,13 @@ function Home(){
 
       <footer >
         <p style={{textAlign:"center"}}>Thank you for your Support</p><br/>
-        <a href="#">ContactUs </a><br/>
+        <a href="https://google.com/">Contact Us </a><br/>
         <a href="https://www.thenationalliteracyinstitute.com/literacy-statistics">National Literacy Institute </a>
-        <ul className="social container">
-          <i className="fa-brands fa-facebook"></i>
-          <i className="fa-brands fa-twitter"></i>
-          <i className="fa-brands fa-instagram"></i>
-          <i className="fa-brands fa-tiktok"></i>
+        <ul className="social container" >
+          <a style={{color: "white"}} href="https://www.facebook.com/" ><i className="fa-brands fa-facebook"></i></a>
+          <a style={{color: "white"}} href="https://twitter.com/"><i className="fa-brands fa-x-twitter"></i></a>
+          <a style={{color: "white"}} href="https://www.instagram.com/"><i className="fa-brands fa-instagram"></i></a>
+          <a style={{color: "white"}} href="https://www.tiktok.com/"><i className="fa-brands fa-tiktok"></i></a>
         </ul>
       </footer> 
     </div>    

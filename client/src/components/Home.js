@@ -2,7 +2,7 @@ import React from "react";
 
 
 function Home(){
-  const stats= ["Approximately 40% of students across the nation cannot read at a basic level.","Students struggle in other academic areas.","Student disposition changes when they are made to feel inadequate." ]
+  const stats= ["Approximately 40% of students across the nation cannot read at a basic level.","Students who struggle with reading, struggle in other academic areas.","A students disposition changes when they are made to feel inadequate." ]
   const benefitsToChild= ["Practice promotes improved reading skills.",
   "Improvement of student writing, grammar and spelling",
   "Promotes a love of reading because kids get to choose books that are enjoyable",  

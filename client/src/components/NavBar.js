@@ -15,7 +15,7 @@ function NavBar(){
                      position: 'absolute',
                      top: 10,
                      }
-    const linkStyle ={marginLeft: "100px",
+    const linkStyle ={marginLeft: "115px",
                       position: 'absolute',
                       top: 10,}
     const logoutLink = {position: 'absolute',

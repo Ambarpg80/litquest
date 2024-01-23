@@ -49,4 +49,4 @@
     * When a child account is created, it is currently with the intention that:
         * The child will add books to their list and add, delete and update the summaries that they create.
        * The child is meant to use the summary as a recap of whatever chapters or pages they covered while reading. This means that each book with a series of summaries as the child goes through the book.
-       * When the child first logs in or signs up they will see a link tilted my_books in the navigation bar. There they will be able to add their first summary from the books available in the collection (currently smample data) or they can add a book to the overall collection and a summary that will show up on their page. 
+       * When the child first logs in or signs up they will see a link titled my_books in the navigation bar. There they will be able to add their first summary from the books available in the collection (currently smample data) or they can add a book to the overall collection and a summary that will show up on their page. 

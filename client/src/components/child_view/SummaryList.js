@@ -6,10 +6,11 @@ function SummaryList({book, onRemoveReview, onUpdateReview}){
 const {currentUser} = useContext(userContext);
 
     return(
-       <div>
+       <div > 
+        <h5 id="summary-heading">Summaries</h5>
         {book.reviews.map(review => review.child_id === currentUser.id ?
-        <div key={review.summary}> 
-             <SummaryDetails book={book} review={review} onRemoveReview={onRemoveReview} onUpdateReview={onUpdateReview}/>
+        <div key={review.summary} className="summary-container"> 
+            <SummaryDetails book={book} review={review} onRemoveReview={onRemoveReview} onUpdateReview={onUpdateReview}/>
         </div> : null )}
        </div>
     )

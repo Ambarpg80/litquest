@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap&family=Playpen+Sans:wght@100;200;300;400;500;700&display=swap');
+
+.container{
+  width: 100%;
+}
 
 button{
   margin: 10px;
@@ -182,10 +186,11 @@ div#child-portal{
 
 .card{
   display: flex;
+  flex-direction: column;
   border: 1px solid rgb(134, 149, 136);
   margin: 30px;
-  width: 15%;
-  height: 350px;
+  width: 250px;
+  height: 375px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.415);
   transition: 0.3s;
   border-radius: 5px;
@@ -199,19 +204,20 @@ div#child-portal{
 
 /* green square */
 div.card-container {
-  padding: 15px;
-  background-color: rgba(24, 225, 51, 0.302);
-  height: 250px;
-  border-radius: 0 0 5px;  
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: rgb(176, 248, 185);
+  height: 200px;
+  border-radius: 0 0 5px 5px;  
 }
 
 .avatar{
-  width: 125px;
-  height: 125px;
-  border-radius: 60px ;
-  position: relative;
+  width: 55%;
+  height: 40%;
+  border-radius: 65px ;
+  /* position: absolute; */
   /* justify-content: center; */
-  margin-left: 25%;
+  margin-left: 20%;
   margin-top: 10%;
 }
 /*++++++++++++++++++++++ END OF KIDS CARDS- PARENT/CHILDREN LIST  ++++++++++++++++++++++++++++++++ */
@@ -242,8 +248,8 @@ div.card-container {
   margin: 10px;
   display: inline-flex;
   text-align: left;
+  font-size: 18px;
 }
-
 
 .thumbnail{
   display: block;
@@ -269,19 +275,81 @@ img {
 /*++++++++++++++++++++++ END OF CHILD BOOKS DISPLAY-CHILD VIEW ++++++++++++++++++++++++++++++++ */
 
 /*++++++++++++++++++++++ START OF CHILD SUMMARIES FORM-CHILD VIEW ++++++++++++++++++++++++++++++++ */
-div.form-container{
+.sumEdit-container{
   display: flex;
-  text-align: right;
-  font-size : 16px;
+  flex-direction: column;
+  text-align: center;
+  font-size : 18px;
   color:#123024;  
   background-color:#70d4862e;
   border:  5px, solid, rgb(50, 72, 3) ;
   border-radius: 10px;
   margin: auto;
-  padding-left: 5vh;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 30px;
   width : 650px;
+}
+.sumEdit-container input{
+  display: inline-block;
+  align-items: right;
+  border:  solid 2px rgba(0, 63, 13, 0.353);
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 10px;
+  height: 25px;
+  width: 400px;
+  max-width: 600px;
+}
+.sumEdit-container textarea{
+  display: inline-block;
+  border-radius: 5px;
+  border:  solid 2px rgba(0, 63, 13, 0.353);
+  font-size: 18px;
+  margin: 10px;
+  height: 100px;
+  width: 400px;
+}
+#summaryButtons{
+  display: inline;
+  margin-left: 40%;
+}
+
+#summary-heading{
+  padding: 30px;
+  font-size: 22px;
+}
+
+#summary p{
+  padding-right: 60px;
+  padding-left: 60px;
+  font-size: 18px;
+}
+/*++++++++++++++++++++++ END OF BOOK/SUMMARIES FORMS-CHILD VIEW ++++++++++++++++++++++++++++++++ */
+/*++++++++++++++++++++++ GENERAL FORMS ++++++++++++++++++++++++++++++++ */
+
+div.form-container{
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size : 18px;
+  color:#123024;  
+  background-color:#70d4862e;
+  border:  5px, solid, rgb(50, 72, 3) ;
+  border-radius: 10px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  width : 650px;
+}
+.form-container p{
+  text-align: left;
+  padding: 20px;
+  font-family: 'Playpen Sans', cursive;
+  font-weight: 400;
 }
 
 .form-container input{
@@ -305,7 +373,7 @@ div.form-container{
   height: 100px;
   width: 400px;
 }
-/*++++++++++++++++++++++ END OF BOOK/SUMMARIES FORMS-CHILD VIEW ++++++++++++++++++++++++++++++++ */
+/*++++++++++++++++++++++ END OF GENERAL FORMS ++++++++++++++++++++++++++++++++ */
 /*++++++++++++++++++++++ START OF FOOTER ICONS +++++++++++++++++++++++++++++++++++++*/
 footer{
   display:flex;

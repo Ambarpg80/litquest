@@ -30,7 +30,7 @@ function BookDetails({book, onAddReview, onRemoveReview, onUpdateReview}){
          </div> 
          <button style={buttonStyle} onClick={handleShowSummaries}>{showSummaries ? "Close Sumaries" : "See Summaries"} </button>
         {showSummaries ? <div><SummaryForm book={book} handleShowSummaries={handleShowSummaries} onAddReview={onAddReview} onUpdateReview={onUpdateReview} /></div> : null} 
-        {showSummaries ? <div> <SummaryList book={book} onUpdateReview={onUpdateReview} onRemoveReview={onRemoveReview} /></div>: null} 
+        {showSummaries ? <div > <SummaryList book={book} onUpdateReview={onUpdateReview} onRemoveReview={onRemoveReview} /></div>: null} 
       </div>
     )
 }

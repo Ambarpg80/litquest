@@ -46,7 +46,7 @@ function NewSummaryForm({ allBooks, handleShowSummaries, addNewReview}){
         
         <div className='form-container'>
           <form onSubmit={reviewSubmission}>
-          <p style={{textAlign: "center"}}> If your book is not part of our list, Click on <i>Add a New Book </i>to our list. </p>
+          <p style={{textAlign: "center"}}> If your book is <b>not</b> part of our list, Click on <b>Add a New Book</b> to add the book to our list. </p>
            <label> Select A Book : 
             <select style={{marginLeft:"10px"}} onChange={handleChange} id="book_id"  value={newReview.book_id}>
                 {allBooks.map(sumBk=> 

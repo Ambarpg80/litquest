@@ -17,21 +17,17 @@ function SummaryDetails({review, book, onRemoveReview, onUpdateReview }){
    } 
   
    return(
-       <div style={{position: "relative", left:"30%"}}>
+       <div >
           { editForm ? <SummaryEditForm book={book} review={review} showEditForm={showEditForm} onUpdateReview={onUpdateReview} /> :
-          <div>
-            <h5>Summaries</h5>
-          <p>Summary: {review.summary}</p> 
-          <p>Rating: {review.rating} out of 5</p>
+          <div id="summary">
+               <p> {review.summary}</p> 
+               <p>Rating: {review.rating} out of 5</p>
          </div>
          }
-          <button onClick={showEditForm} 
-                    style={buttonStyling} 
-                    type="button"> Edit Summary 
-            </button> 
-           
-          <button style={{position: "relative"}} onClick={deleteReview}>Delete Summary</button>
-        
+         <div id="summaryButtons">
+            <button onClick={showEditForm} type="button"> Edit Summary </button> 
+            <button  onClick={deleteReview} type="button">Delete Summary</button>
+         </div>
        </div>
     )
 }

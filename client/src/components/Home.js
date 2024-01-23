@@ -1,7 +1,7 @@
 import React from "react";
 
 function Home(){
-  const stats= ["Approximately 40% of students across the nation cannot read at a basic level.","Students who struggle with reading, struggle in other academic areas.","A students disposition changes when they are made to feel inadequate." ]
+  const stats= ["40% percent of fourth-grade students did not meet the NAEP Basic level in 2022.","30% percent of eighth-graders did not meet the NAEP Basic level","Students who struggle with reading, struggle in other academic areas. A students disposition changes when they are made to feel inadequate." ]
   const benefitsToChild= ["Practice promotes improved reading skills.",
   "Improvement of student writing, grammar and spelling",
   "Promotes a love of reading because kids get to choose books that are enjoyable",  
@@ -23,7 +23,7 @@ function Home(){
 
       <div className="stat-cards " >
         <h1 style={{textAlign:"center", paddingTop:"40px"}}> <em>Did You Know?</em></h1>
-      {stats.map(stat=>  <div key={stat} className="stat-card"><div style={{padding: "10px", textAlign:"center", height:"250px",borderRadius:"20px"}}>{stat}</div> </div>)}
+      {stats.map(stat=>  <div key={stat} className="stat-card"><div style={{padding:"5px", textAlign:"center", height:"275px",borderRadius:"20px"}}>{stat}</div> </div>)}
       </div>
 
       <div id="litquest" style={{paddingLeft: "70px", paddingTop: "25px"}} >
@@ -55,7 +55,8 @@ function Home(){
       <footer >
         <p style={{textAlign:"center"}}>Thank you for your Support</p><br/>
         <a href="https://google.com/">Contact Us </a><br/>
-        <a href="https://www.thenationalliteracyinstitute.com/literacy-statistics">National Literacy Institute </a>
+        <a href="https://www.thenationalliteracyinstitute.com/literacy-statistics">National Literacy Institute </a><br/>
+        <a href="https://www.nationsreportcard.gov/reading/nation/achievement/?grade=4">The Nation's Report Card </a><br/>
         <ul className="social container" >
           <a style={{color: "white"}} href="https://www.facebook.com/" ><i className="fa-brands fa-facebook"></i></a>
           <a style={{color: "white"}} href="https://twitter.com/"><i className="fa-brands fa-x-twitter"></i></a>

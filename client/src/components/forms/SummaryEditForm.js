@@ -42,7 +42,7 @@ function SummaryEditForm({book, review, showEditForm, onUpdateReview }){
         }
     return(
        <div >
-        <div className='form-container'>
+        <div className='sumEdit-container'>
             <form onSubmit={bookSubmission}>
                 <label>Summary: 
                     <textarea type="text"

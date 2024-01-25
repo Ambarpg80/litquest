@@ -5,7 +5,7 @@
 
  I created this application because this was my way to engage my kids in discussion beyond the daily conversation of "How was your day?" I typically encourage my kids to read and engage them with questions to see why they pick the stories they read and what they like about them. I also like to see if they are really reading the books. Studying software development became very time consuming and I couldn't always dedicate the usual time to discussion because I had deadlines to meet. So I created LitQuest as a way for them to still tell me what they read and then I can read it at my convenience and discuss with them for a shorter time span.  It's meant to foster a love of reading and learning in general.
 
-** This project is a work in progress, as we all are... **
+**This project is a work in progress, as we all are...**
 
 *Interested in learning more?...*
 

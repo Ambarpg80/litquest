@@ -11,6 +11,7 @@
 
 ### PROJECT DEMO/WALKTHROUGH: 
 [demo-walkthrough](https://youtu.be/b4i5j_kFs70)
+
 #### This Project is currently deployed on Render: 
 [LitQuest](https://litquest-v2-0.onrender.com/) 
 *Since this project is running on a service that spins down servers from inactivity, please allow time for the site to be displayed. It can take upto a minute for the site to be displayed and interactive.*
@@ -64,5 +65,4 @@
     - The child is meant to use the summary as a recap of whatever chapters or pages they covered while reading. This means that each book with a series of summaries as the child goes through the book.
     - When the child first logs in or signs up they will see a link titled *My Books* in the navigation bar. There they will be able to add their first summary from the books available in the collection *(currently smample data)* or they can add a book to the overall collection and a summary that will show up on their page. 
 
-*If you've made it this far, thank you for your interest. If you'd like to learn more about me you can visit my site at:*
-[my portfolio site](https://www.ambarindev.com/)
+*If you've made it this far, thank you for your interest. If you'd like to learn more about me you can visit* [my portfolio site](https://www.ambarindev.com/)

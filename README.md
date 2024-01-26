@@ -10,9 +10,9 @@
 *Interested in learning more?...*
 
 ### PROJECT DEMO/WALKTHROUGH: 
-    [title] (https://youtu.be/b4i5j_kFs70)
+[demo-walkthrough](https://youtu.be/b4i5j_kFs70)
 ### PROJECT is currently deployed on Render: 
-    [title](https://litquest-v2-0.onrender.com/) 
+[LitQuest](https://litquest-v2-0.onrender.com/) 
 *Since this project is running on a service that spins down servers from inactivity, please allow time for the site to be displayed. It can take upto a minute for the site to be displayed and interactive.*
 
 #### Basic Specs:
@@ -36,18 +36,16 @@
 ---
 
 #### IMAGES:
-- Generic profile pic placeholder:
-    [title] (https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png)
+[Generic profile pic placeholder](https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png)
 - Homepage Background Images: 
-    - Book pages: [title](https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
-    - Child Reading: [title](https://images.unsplash.com/photo-1599689868384-59cb2b01bb21?q=80&w=1646&auto=format&fit=fill&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==)
-    - Color Pencils: [title](https://images.unsplash.com/photo-1501349800519-48093d60bde0?q=80&w=1680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==)
-    - Statistics- [title](https://www.thenationalliteracyinstitute.com/literacy-statistics)
+[Book pages](https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+[Child Reading Image](https://images.unsplash.com/photo-1599689868384-59cb2b01bb21?q=80&w=1646&auto=format&fit=fill&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==)
+[Color Pencils](https://images.unsplash.com/photo-1501349800519-48093d60bde0?q=80&w=1680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==)
+[Statistics](https://www.thenationalliteracyinstitute.com/literacy-statistics)
 - User profile Avatars:
-       - Girl: [title](https://img.freepik.com/free-vector/hand-drawn-caricature-illustration_23-2149871987.jpg?size=338&ext=jpg&ga=GA1.1.386372595.1697932800&semt=ais)
-
-       - Boy: [title](https://i.pinimg.com/originals/aa/97/48/aa9748f05c476ade5ffcb2cc15643372.png)
-- Favicon Generator:[title](https://favicon.io/favicon-generator/)
+[Girl](https://img.freepik.com/free-vector/hand-drawn-caricature-illustration_23-2149871987.jpg?size=338&ext=jpg&ga=GA1.1.386372595.1697932800&semt=ais)
+[Boy](https://i.pinimg.com/originals/aa/97/48/aa9748f05c476ade5ffcb2cc15643372.png)
+[Favicon Generator](https://favicon.io/favicon-generator/)
 
 #### SOCIAL MEDIA ICONS: (https://fontawesome.com/)
 
@@ -67,4 +65,4 @@ This app has 2 types of users in mind: a parent and a child.
     - When the child first logs in or signs up they will see a link titled *My Books* in the navigation bar. There they will be able to add their first summary from the books available in the collection *(currently smample data)* or they can add a book to the overall collection and a summary that will show up on their page. 
 
 *If you've made it this far, thank you for your interest. If you'd like to learn more about me you can visit my site at:*
-[title](https://www.ambarindev.com/)
+[my portfolio site](https://www.ambarindev.com/)

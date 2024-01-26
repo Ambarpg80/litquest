@@ -11,7 +11,7 @@
 
 ### PROJECT DEMO/WALKTHROUGH: 
 [demo-walkthrough](https://youtu.be/b4i5j_kFs70)
-### PROJECT is currently deployed on Render: 
+#### This Project is currently deployed on Render: 
 [LitQuest](https://litquest-v2-0.onrender.com/) 
 *Since this project is running on a service that spins down servers from inactivity, please allow time for the site to be displayed. It can take upto a minute for the site to be displayed and interactive.*
 
@@ -52,7 +52,7 @@
 ---
 
 #### USER FUNCTIONS: 
-This app has 2 types of users in mind: a parent and a child.
+**This app has 2 types of users in mind: a parent and a child.**
 - All users can currently sign up and login to their accounts. 
 - When a parent account is created, it is currently with the intention of having 3 main actions: 
     - Creating accounts for their children.
